@@ -1,6 +1,10 @@
-# Sequence data and generated sequence sets are not committed.
+# Sequence data, generated sequence sets, trees and figures are not committed.
 # See README.md for how to obtain the REXdb files.
 data/
+
+# PLAAC is built from source. See plaac/README.md -- that file is committed.
+plaac/*
+!plaac/README.md
 
 # Python
 __pycache__/

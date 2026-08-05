@@ -587,6 +587,51 @@ The other six columns that duplicate facts recoverable from the FASTA files
 `in_tree` itself) were **kept deliberately**: `elements.tsv` is the audit record
 for this stage and should be filterable without loading sequence files.
 
+### F-18 — The 75 aa cap is unsuitable for trait scoring — CONFIRMED (2026-08-05)
+
+**F-4's uniform 75 aa upstream window must not be used as the input to PLAAC or
+any other trait detector.** It deletes exactly the elements that carry signal.
+
+Capped at 75 aa, PLAAC finds **0 prion-like domains in 5,042 copia sequences**.
+Uncapped — every residue of open upstream reading — it finds **17**, and they
+are entirely confined to the long-N-terminus tail:
+
+| upstream available | copia n | copia PRDs | gypsy n | gypsy PRDs |
+| --- | --- | --- | --- | --- |
+| 0–75 aa | 1,209 | 0 | 1,474 | 0 |
+| 75–120 | 3,170 | 0 | 3,116 | 57 |
+| 120–180 | 522 | 2 | 1,857 | 71 |
+| 180+ | 174 | 15 (8.6%) | 2,050 | 254 (12.4%) |
+
+**Claude asserted twice that the null was robust and was wrong both times.** The
+core-length sweep (c = 60/40/30/20) tested *PLAAC's window parameter*, not the
+*extraction cap* — two different things, conflated when claiming the null was
+"not a truncation artifact." The truncated-Ty1 control had already demonstrated
+that removing sequence destroys signal; that was dismissed for copia because the
+*median* element has only ~88 aa, but the signal lives in the tail. Cameron
+caught this by asking for the uncapped comparison.
+
+**The corrected finding, which is stronger than the null it replaces.** At
+matched N-terminal length there is no evidence copia is less prion-like than
+gypsy — in the two bins where copia has usable numbers it is higher (210–250 aa:
+13.2% vs 4.9%; 250–300 aa: 10.0% vs 5.7%). The raw 14× superfamily gap is almost
+entirely the length distribution: 3.4% of copia have ≥180 aa upstream against
+24.1% of gypsy, and no copia element exceeds 400 aa where gypsy has 249.
+
+So the difference between superfamilies is **architectural** — how often a long
+N-terminal extension exists — not compositional. Prion-like character appears to
+follow from having one.
+
+**Statistical caveat.** Copia per-bin counts are 57/68/40/9 with 2/9/4/0 domains.
+Confidence intervals are wide and the rates bounce in a way consistent with
+sampling noise. This is suggestive, not established; a proper test models PRD
+presence against length with superfamily as a covariate rather than binning.
+
+**Consequences.** The trait is N-terminal extension length, with prion-like
+character as a derived property. Scoring reads uncapped sequences. The 75 aa cap
+remains available where uniform length is genuinely required, but it is no
+longer the default for anything downstream.
+
 ### F-9 — `REXdb_ID` is the join key — CONFIRMED (2026-08-05)
 
 Settled by implementation rather than discussion. Every FASTA header is the bare
@@ -610,6 +655,78 @@ Two things recorded but never established, both flagged where they matter:
 - **10 copia elements have a Gag slice with no part present in their own DNA.**
   Distinct from the frameshift cases diagnosed in F-15, and not investigated.
   They fall under `unplaceable`.
+
+### L-10 — Environment: WSL/Linux, conda-forge and bioconda — CONFIRMED (2026-08-05)
+
+`environment.yml`, linux-64. **None of mmseqs2, mafft, trimal or iqtree has a
+win-64 build** — all four return "no match found" on conda for Windows and
+resolve on linux-64. WSL2/Ubuntu 24.04 was already installed, so the pipeline
+runs there and the environment file is portable to any Linux machine, which is
+what "reproducible by a stranger" means in practice here.
+
+Miniforge, not Miniconda: conda-forge by default, ships mamba, and avoids the
+Anaconda default channels' licence terms for institutional use.
+
+Verified working: mmseqs2 18.8cc5c, mafft 7.525, trimal 1.5.rev1, iqtree 3.1.3,
+openjdk 21.0.10, python 3.12.13, numpy 2.3.5, pytorch 2.9.1 (CPU build),
+metapredict 3.0.2.
+
+`c-compiler` and `cython` are in the environment because metapredict builds
+Cython extensions from source; without them the pip step fails with
+`gcc: No such file or directory`. Keeping the compiler in the environment
+rather than installing it system-wide keeps the file self-sufficient.
+
+**Open:** metapredict V2 vs V3. Pinned at 3.0.2, but V2 is the version most
+published disorder comparisons cite and may ship prebuilt wheels. The two can
+give materially different scores.
+
+### L-4 — PLAAC α = 1.0, with 0 / 0.5 / 1.0 reported — CONFIRMED (2026-08-05)
+
+A fixed yeast background is batch-independent: scores do not move when elements
+are added to or removed from the input set, which is essential when comparing
+across lineages. All three values are reported so α-sensitivity is visible
+rather than assumed.
+
+### L-5 — PLAAC core length 60, scored on the full merged Gag — CONFIRMED (2026-08-05)
+
+60 is the standard, keeping results comparable to the PLAAC literature and to
+the yeast references (313–325 aa, where 60 is unproblematic).
+
+**Scored on the whole emitted sequence**, not the N-terminal region alone. The
+N-terminus is only 75 aa, so a 60 aa window has just 15 aa of positional freedom
+and any called domain must occupy ~80% of it or spill into the capsid core.
+Rather than pre-restricting the input, `gag_upstream` marks the boundary, so
+recording hit coordinates shows whether hits fall in the N-terminal region or
+straddle it. If they always straddle it, that is evidence the window is too
+coarse — the resolution problem becomes observable instead of assumed.
+
+### L-6 — Disorder tool: metapredict — CONFIRMED (2026-08-05)
+
+pip-installable, no licence, scriptable, and therefore pinnable in
+`environment.yml`. IUPred3 requires registration and is not redistributable, so
+it could not be pinned — a reproducibility cost the build brief cares about.
+
+### L-7 — catGRANULE deferred to an external input — PROVISIONAL (2026-08-05)
+
+The score stage accepts a catGRANULE results file as a joinable column rather
+than orchestrating the tool. Both versions are primarily web-based, and 5,042
+sequences through a web form is not viable, so it will run on the 5 yeast
+references plus a subset stratified across lineages *and* across the
+PLAAC/disorder range.
+
+Version unresolved. The original (Bolognesi et al. 2016) has more published
+comparisons and its feature set — disorder, RNA-binding propensity, composition
+— maps onto the Layer A / Layer B split. If 2.0/ROBOT relies on structural
+prediction that is a liability here, since the input is a 165 aa fragment of a
+larger disordered protein. **Claude is not confident about 2.0's feature set;
+verify before committing.**
+
+Applies to both: every LLPS predictor is trained on full-length, mostly human
+and yeast RNA-binding proteins, so a retrotransposon Gag fragment is
+off-distribution. Belongs in the limitations either way — the same problem as
+PLAAC being yeast-trained.
+
+---
 
 ## Decision queue — later stages
 

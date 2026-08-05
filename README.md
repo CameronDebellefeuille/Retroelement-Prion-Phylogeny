@@ -38,30 +38,46 @@ Download from <https://github.com/repeatexplorer/rexdb> into `data/REXdb/`:
 Citation: Neumann et al., *Mobile DNA* 2019, doi:10.1186/s13100-018-0144-1.
 
 Note that REXdb's Gag slices are the capsid core, not the whole ORF. The
-disordered N-terminus carrying the PrLD is **not** in the protein FASTA.
-Whether and how to recover it from the DNA file is an open decision, not a
-settled step.
+disordered N-terminus is **not** in the protein FASTA — it is recovered from the
+element DNA by `fetch`.
+
+## Install
+
+The bioinformatics tools have no Windows builds, so on Windows this runs under
+WSL. PLAAC is built separately — see `plaac/README.md`.
+
+```bash
+conda env create -f environment.yml
+conda activate copia-prld
+```
 
 ## Run
 
 ```bash
-python scripts/fetch.py
+python  scripts/fetch.py     # sequence sets from REXdb        (stdlib only)
+python  scripts/score.py     # trait table: composition, PLAAC, disorder
+python  scripts/tree.py      # sample -> MAFFT -> trimAl -> IQ-TREE
+Rscript scripts/plots.R      # figures
 ```
 
-Stdlib only. Reads `data/REXdb/` and writes to `data/`:
+`fetch` reads `data/REXdb/` and writes to `data/`:
 
 | file | contents |
 | --- | --- |
 | `elements.tsv` | one row per copia/gypsy element, metadata and flags |
 | `rt_copia.faa`, `rt_gypsy.faa` | RT slices as published — these build the tree |
 | `gag_copia.faa`, `gag_gypsy.faa` | Gag N-terminal region + capsid core |
-| `gag_reference.faa` | yeast Ty1 elements at full length, as controls |
 
 RT is used as REXdb publishes it. Gag is re-derived from element DNA, because
 the published Gag slice is the capsid core only and does not contain the
 N-terminal region this project is about: the slice is located in a six-frame
-translation to fix the reading frame, then extended 75 aa upstream, cut at any
-in-frame stop.
+translation to fix the reading frame, then extended upstream to the in-frame
+stop. There is no length cap: capping at 75 aa removed exactly the long
+N-terminus elements that carry the signal (F-18).
+
+The later stages add `traits.tsv` (one row per Gag sequence: composition,
+charge, PLAAC at three alpha values, metapredict disorder), `tree/rt.treefile`
+and `figures/`.
 
 Every element with an RT enters the tree, so the tree is larger than the trait
 set — prune it on `gag_status` for the comparative analysis. Nothing is filtered

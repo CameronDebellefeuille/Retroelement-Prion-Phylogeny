@@ -10,7 +10,12 @@ INFO_FILE = "Viridiplantae_v4.0_ALL_info-species-source_taxid"
 DNA_FILE = "Viridiplantae_v4.0_ALL_DNA.fasta"
 
 SUPERFAMILIES = {"Ty1/copia": "copia", "Ty3/gypsy": "gypsy"}
-UPSTREAM = 75
+
+# F-18: no upstream cap. F-4's uniform 75 aa window deleted exactly the
+# long-N-terminus elements that carry the trait signal -- PLAAC found 0 prion-like
+# domains in capped copia and 17 uncapped. gag_upstream records how much was
+# taken, so a uniform subset can still be cut downstream.
+UPSTREAM = None
 GAG_MIN_UPSTREAM = 1
 
 # S. cerevisiae Ty1/copia elements, also kept at full length as controls (F-10).
@@ -213,7 +218,6 @@ def main():
                    gag_len="", gag_ambiguous="", gag_clipped_by="")
 
     gag = defaultdict(list)
-    references = []
     for element, dna in read_fasta(os.path.join(REXDB, DNA_FILE)):
         core = domains.get(element, {}).get("GAG")
         if not core:
@@ -236,16 +240,12 @@ def main():
                              gag_clipped_by=ended_by)
         if usable:
             gag[rows[element]["superfamily"]].append((element, sequence))
-        if element in REFERENCES:  # controls bypass the filters
-            full, _ = extend_upstream(protein, index, None)
-            references.append((element, full + core))
 
     for superfamily, short in SUPERFAMILIES.items():
         write_fasta("rt_%s.faa" % short,
                     [(e, domains[e]["RT"]) for e, row in rows.items()
                      if row["superfamily"] == superfamily and row["in_tree"]])
         write_fasta("gag_%s.faa" % short, gag[superfamily])
-    write_fasta("gag_reference.faa", references)
 
     with open(os.path.join(OUT, "elements.tsv"), "w", encoding="utf-8",
               newline="\n") as handle:
