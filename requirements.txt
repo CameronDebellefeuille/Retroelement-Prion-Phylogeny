@@ -1,0 +1,5 @@
+# scripts/fetch.py uses the Python standard library only.
+#
+# Later stages need external tools, installed with conda rather than pip:
+#   conda install -c bioconda mmseqs2 mafft trimal iqtree
+# PLAAC is a separate download: https://github.com/whitehead/plaac

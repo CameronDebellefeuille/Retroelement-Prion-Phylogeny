@@ -1,0 +1,7 @@
+# Sequence data and generated sequence sets are not committed.
+# See README.md for how to obtain the REXdb files.
+data/
+
+# Python
+__pycache__/
+*.py[cod]
