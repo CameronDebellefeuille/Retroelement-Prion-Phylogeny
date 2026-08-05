@@ -1,17 +1,3 @@
-"""Build the RT and Gag sequence sets from REXdb Viridiplantae v4.0.
-
-RT is used as published. Gag is re-derived from element DNA: find the published
-GAG slice to fix the reading frame, then take 75 aa upstream, cut at any
-in-frame stop. Reference elements also get their full upstream region.
-
-Every element with an RT goes into the tree. Nothing is filtered on ambiguity --
-the counts are recorded instead. Where a Gag is missing, gag_status says why, so
-absence of a trait is never ambiguous. Reasoning is in claude/DECISIONS.md
-(F-1 to F-4, F-6 to F-8, F-10, F-15).
-
-Run: python scripts/fetch.py
-"""
-
 import csv
 import os
 from collections import defaultdict
@@ -25,12 +11,6 @@ DNA_FILE = "Viridiplantae_v4.0_ALL_DNA.fasta"
 
 SUPERFAMILIES = {"Ty1/copia": "copia", "Ty3/gypsy": "gypsy"}
 UPSTREAM = 75
-
-# F-6: no ambiguity filter. The worst sequence in the release has 13 unresolved
-# residues in 256 aa of RT and 6 in 164 aa of Gag, so the counts are recorded
-# (rt_ambiguous, gag_ambiguous) and scoring decides.
-# F-8: an element with no N-terminal region at all cannot be compared with one
-# that has 75 aa of it.
 GAG_MIN_UPSTREAM = 1
 
 # S. cerevisiae Ty1/copia elements, also kept at full length as controls (F-10).
@@ -70,7 +50,7 @@ CODONS = {
 #                    release files disagree; dropped from the tree too (F-16)
 #   no_nterm         placed, but nothing upstream of the core (F-8)
 COLUMNS = ["rexdb_id", "superfamily", "lineage", "species", "taxid", "prelim_id",
-           "source", "is_reference", "rt_len", "rt_ambiguous", "rt_pass",
+           "source", "is_reference", "rt_len", "rt_ambiguous", "in_tree",
            "has_gag", "gag_status", "gag_core_exact", "gag_frame",
            "gag_upstream", "gag_core_len", "gag_len", "gag_ambiguous",
            "gag_clipped_by"]
@@ -99,17 +79,11 @@ def forward_frames(dna):
 def search_frames(dna, query):
     """Find query in a forward frame, X on either side matching anything.
 
-    Clean queries use str.find, which is C-level. Queries carrying X are anchored
-    on their longest clean fragment and verified only there; checking every
-    position would be far too slow across ~14k elements.
+    REXdb writes X where it could not resolve a codon, and str.find cannot match
+    a wildcard. So the query is anchored on its longest X-free run and only those
+    positions are compared -- checking every position would be far too slow. A
+    query with no X anchors on itself, which makes this an exact search.
     """
-    if "X" not in query:
-        for frame, protein in forward_frames(dna):
-            index = protein.find(query)
-            if index >= 0:
-                return frame, protein, index
-        return None, None, -1
-
     anchor = max(query.split("X"), key=len)
     if not anchor:
         return None, None, -1
@@ -127,14 +101,7 @@ def search_frames(dna, query):
 
 
 def find_slice(dna, slice_):
-    """Locate a published slice. Returns (frame, protein, index, exact).
-
-    Falls back to the slice's first 30/25/20 aa. Many Gag slices carry a
-    frameshift, so no single frame holds the whole thing -- but only the start is
-    needed to walk upstream, and the break is almost always downstream of it.
-    `exact` is False for those: their core is REXdb's reconstruction of a broken
-    region, not a faithful translation of this DNA (F-15).
-    """
+    """Locate a published slice. Returns (frame, protein, index, exact)."""
     frame, protein, index = search_frames(dna, slice_)
     if frame:
         return frame, protein, index, True
@@ -239,7 +206,7 @@ def main():
         rt = domains[element].get("RT", "")
         has_gag = "GAG" in domains[element]
         row.update(rt_len=len(rt), rt_ambiguous=rt.count("X"),
-                   rt_pass=int(bool(rt)), has_gag=int(has_gag),
+                   in_tree=int(bool(rt)), has_gag=int(has_gag),
                    gag_core_len=len(domains[element].get("GAG", "")),
                    gag_status="unplaceable" if has_gag else "no_slice",
                    gag_core_exact="", gag_frame="", gag_upstream="",
@@ -255,7 +222,7 @@ def main():
         frame, protein, index, exact = find_slice(sequence_dna, core)
         if not frame:
             if slice_absent(sequence_dna, core):
-                rows[element].update(gag_status="record_mismatch", rt_pass=0)
+                rows[element].update(gag_status="record_mismatch", in_tree=0)
             continue
         upstream, ended_by = extend_upstream(protein, index, UPSTREAM)
         sequence = upstream + core
@@ -276,7 +243,7 @@ def main():
     for superfamily, short in SUPERFAMILIES.items():
         write_fasta("rt_%s.faa" % short,
                     [(e, domains[e]["RT"]) for e, row in rows.items()
-                     if row["superfamily"] == superfamily and row["rt_pass"]])
+                     if row["superfamily"] == superfamily and row["in_tree"]])
         write_fasta("gag_%s.faa" % short, gag[superfamily])
     write_fasta("gag_reference.faa", references)
 

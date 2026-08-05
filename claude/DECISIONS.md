@@ -541,7 +541,7 @@ lineage-biased in exactly the way F-6 avoids.
 
 **Where filtering happens.** In `fetch`, not a separate stage. The FASTA files
 carry only passing sequences; `elements.tsv` retains all 14,355 rows with
-`rt_pass` and `gag_pass`, so every drop and its reason stay on record.
+`in_tree` and `gag_status`, so every drop and its reason stay on record.
 Reference sequences (F-10) bypass the filters — they are controls.
 
 ---
@@ -569,6 +569,23 @@ from more taxa and lets the pruned tree inherit that. `gag_status` makes the
 pruning a one-line filter.
 
 Tree: copia 5,606 → 5,596, gypsy 8,749 → 8,748.
+
+### F-17 — `search_frames` fast path removed; `rt_pass` renamed `in_tree` — CONFIRMED (2026-08-05)
+
+`search_frames` had a separate exact-match branch for queries without an `X`.
+It was redundant: a query with no `X` splits to itself, so the anchor *is* the
+whole query and the wildcard comparison reduces to an exact one. Verified on all
+13,746 Gag slices — identical frame and index in every case. Removing it drops
+7 lines and one code path.
+
+`rt_pass` became `in_tree`. It no longer means "passed a quality filter" — since
+F-6 dropped the ambiguity filter, the only exclusion is `record_mismatch`, so
+the column simply records whether the element's RT was written to `rt_*.faa`.
+
+The other six columns that duplicate facts recoverable from the FASTA files
+(`rt_len`, `rt_ambiguous`, `gag_len`, `gag_ambiguous`, `gag_core_len`, and
+`in_tree` itself) were **kept deliberately**: `elements.tsv` is the audit record
+for this stage and should be filterable without loading sequence files.
 
 ### F-9 — `REXdb_ID` is the join key — CONFIRMED (2026-08-05)
 
