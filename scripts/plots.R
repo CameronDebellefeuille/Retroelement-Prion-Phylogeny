@@ -130,11 +130,10 @@ save2("panel", (f1 | f2) / (f3 | f4) + plot_annotation(tag_levels = "A"), 11, 8)
 # Only the PLAAC-positive tips are labelled. 679 labels would be unreadable, and
 # these are the ones that carry the claim -- the labels show at once that they
 # are one lineage in essentially one genus.
-abbrev <- function(s) sub("^(\\w)\\w+ (\\w+).*$", "\\1. \\2", s)
-
 tree <- read.tree("data/tree/rt.treefile")
 tip <- traits |> filter(rexdb_id %in% tree$tip.label) |>
-  transmute(label = rexdb_id, gag_upstream, lineage, species_full = species,
+  transmute(label = rexdb_id, gag_upstream, disorder_nterm, lineage,
+            species_full = species,
             prd = ifelse(has_prd == 1, "PRD", NA_character_))
 
 # Label the two clades that carry the domains, not every tip -- 15 tip labels in
@@ -150,32 +149,50 @@ cat(sprintf("Eucalyptus PRD tips: %d; their MRCA clade holds %d tips -> %s\n",
             length(euc_tips), length(euc_clade),
             ifelse(length(euc_clade) == length(euc_tips), "MONOPHYLETIC",
                    "not monophyletic (clade contains other elements)")))
-euc_label <- sprintf("Ale / Eucalyptus  (%d domains in a %d-tip clade)",
+euc_label <- sprintf("Ale / Eucalyptus  (%d of %d)",
                      length(euc_tips), length(euc_clade))
-yeast_label <- sprintf("S. cerevisiae Ty1 control  (%d)", length(yeast_tips))
+yeast_label <- sprintf("S. cerevisiae Ty1  (%d)", length(yeast_tips))
 
-f5 <- ggtree(tree, layout = "fan", open.angle = 12, linewidth = 0.15,
-             colour = INK2) %<+% tip +
-  geom_tippoint(aes(colour = gag_upstream), size = 1.1, alpha = 0.85) +
-  scale_colour_gradient(low = "#cfe0f5", high = COPIA, name = "N-term aa",
-                        na.value = GRID) +
-  geom_tippoint(aes(subset = !is.na(prd)), colour = GYPSY, size = 1.7, shape = 18) +
-  geom_cladelab(node = euc_node, label = euc_label, offset = 0.10,
-                barcolour = GYPSY, textcolour = INK, fontsize = 3, barsize = 0.8) +
-  geom_cladelab(node = yeast_node, label = yeast_label, offset = 0.10,
-                barcolour = TY1, textcolour = INK, fontsize = 3, barsize = 0.8) +
-  labs(title = "Copia RT phylogeny, N-terminal extension mapped on tips",
-       subtitle = sprintf(paste("%d tips, LG+G4, SH-aLRT. Diamonds mark a PLAAC domain.",
-                                "\nEvery plant domain is Ale lineage, nearly all Eucalyptus.",
-                                "The clade is not uniform: 11 of its 31 elements carry a",
-                                "domain,\nand 19 of the 20 that do not have ample N-terminal",
-                                "sequence to host one."),
-                          length(tree$tip.label))) +
-  theme(plot.title = element_text(face = "bold", size = 11, colour = INK),
-        plot.subtitle = element_text(colour = INK2, size = 8.8),
-        plot.background = element_rect(fill = SURFACE, colour = NA),
-        legend.position = c(0.94, 0.5),
-        plot.margin = margin(4, 4, 4, 4))
+# Same topology, different trait. Sequential scale, one hue light-to-dark; a
+# distinct hue per trait so the two trees are told apart at a glance.
+tree_of <- function(trait, legend, hue, title, subtitle) {
+  ggtree(tree, layout = "fan", open.angle = 12, linewidth = 0.15,
+         colour = INK2) %<+% tip +
+    geom_tippoint(aes(colour = .data[[trait]]), size = 1.1, alpha = 0.85) +
+    scale_colour_gradient(low = hue[1], high = hue[2], name = legend,
+                          na.value = GRID) +
+    geom_tippoint(aes(subset = !is.na(prd)), colour = GYPSY, size = 1.7, shape = 18) +
+    geom_cladelab(node = euc_node, label = euc_label, offset = 0.10,
+                  barcolour = GYPSY, textcolour = INK, fontsize = 3, barsize = 0.8) +
+    geom_cladelab(node = yeast_node, label = yeast_label, offset = 0.10,
+                  barcolour = TY1, textcolour = INK, fontsize = 3, barsize = 0.8) +
+    labs(title = title, subtitle = subtitle) +
+    theme(plot.title = element_text(face = "bold", size = 11, colour = INK),
+          plot.subtitle = element_text(colour = INK2, size = 8.8),
+          plot.background = element_rect(fill = SURFACE, colour = NA),
+          legend.position = c(0.94, 0.5),
+          plot.margin = margin(4, 4, 4, 4))
+}
+
+n_missing <- sum(is.na(tip$disorder_nterm))
+
+f5 <- tree_of("gag_upstream", "N-term aa", c("#cfe0f5", COPIA),
+              "Copia RT phylogeny, N-terminal extension length",
+              sprintf(paste("%d tips, LG+G4, SH-aLRT. Diamonds mark a PLAAC domain.",
+                            "\nEvery plant domain is Ale lineage, nearly all Eucalyptus.",
+                            "The clade is not uniform: 11 of its 31 elements carry a",
+                            "domain,\nand 19 of the 20 that do not have ample N-terminal",
+                            "sequence to host one."), length(tree$tip.label)))
+
+f6 <- tree_of("disorder_nterm", "disorder", c("#d6f0e6", "#0d6b4a"),
+              "Copia RT phylogeny, N-terminal disorder",
+              sprintf(paste("metapredict mean disorder over the N-terminal region.",
+                            "Grey tips (%d) carry an unresolved residue,\nwhich",
+                            "metapredict cannot score. Disorder correlates with",
+                            "length only moderately (r = 0.58),\nso it is not the",
+                            "same map."), n_missing))
 
 save2("fig5_tree", f5, 8.5, 7.4)
+save2("fig6_tree_disorder", f6, 8.5, 7.4)
+save2("fig7_trees_compared", f5 + f6, 15, 7.4)
 cat("wrote data/figures/\n")
