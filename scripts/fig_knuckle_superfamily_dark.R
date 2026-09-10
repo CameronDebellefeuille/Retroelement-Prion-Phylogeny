@@ -17,7 +17,7 @@ suppressPackageStartupMessages({
   library(readr); library(dplyr); library(tidyr); library(ggplot2)
 })
 
-OUT <- "data/gag_plaac/figures"
+OUT <- "figures"
 dir.create(OUT, showWarnings = FALSE, recursive = TRUE)
 
 BG <- "#000000"
@@ -35,7 +35,7 @@ NO_PRLD   <- "#9b98a8"
 TRUE_KNUCKLE <- c("PF00098", "SM00343", "PS50158", "SSF57756")
 KEEP <- c("Ty1/Copia", "Ty3/Gypsy", "Retroviridae")
 
-ipr <- lapply(list.files("data/gag_plaac/interpro", pattern = "^part",
+ipr <- lapply(list.files("data/processed/gydb/InterProScan", pattern = "^part",
                          full.names = TRUE),
               read_tsv, col_names = FALSE, show_col_types = FALSE,
               progress = FALSE) %>% bind_rows()
@@ -43,7 +43,7 @@ ipr <- lapply(list.files("data/gag_plaac/interpro", pattern = "^part",
 scanned <- unique(ipr$X1)
 knuckled <- unique(ipr$X1[ipr$X5 %in% TRUE_KNUCKLE])
 
-traits <- read_tsv("data/gag_plaac/traits_272.tsv", show_col_types = FALSE) %>%
+traits <- read_tsv("data/processed/gydb/traits_272.tsv", show_col_types = FALSE) %>%
   filter(element %in% scanned, superfamily %in% KEEP) %>%
   mutate(group = ifelse(has_prd == 1, "PrLD present", "PrLD absent"),
          knuckle = element %in% knuckled)
@@ -158,12 +158,9 @@ render <- function(name, bg) {
     legend.key        = element_rect(fill = pane, colour = NA))
   ggsave(file.path(OUT, paste0(name, ".png")), p, width = 8.4, height = 5.4,
          dpi = 400, bg = bg, type = "cairo")
-  ggsave(file.path(OUT, paste0(name, ".pdf")), p, width = 8.4, height = 5.4,
-         bg = bg, device = cairo_pdf)
   cat("wrote", name, "\n")
 }
 
-render("fig_knuckle_superfamily_dark", BG)
 render("fig_knuckle_superfamily_dark_transparent", "transparent")
 
 bars %>% mutate(across(c(pct, lo, hi), ~ sprintf("%.0f%%", 100 * .x))) %>%

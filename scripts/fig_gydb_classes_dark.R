@@ -1,6 +1,6 @@
 # fig_gydb_classes_dark.{png,pdf} -- LLR by protein class, for a dark slide.
 #
-# The slide version of fig_gydb_classes from data/gag_plaac/figures_272.R: same
+# The slide version of fig_gydb_classes from figures_272.R (now in backup): same
 # data, same geometry, repainted light-on-dark on a transparent background.
 #
 # Title, subtitle and caption are gone on purpose. The slide carries its own
@@ -17,7 +17,7 @@ suppressPackageStartupMessages({
   library(readr); library(dplyr); library(ggplot2)
 })
 
-OUT <- "data/gag_plaac/figures"
+OUT <- "figures"
 dir.create(OUT, showWarnings = FALSE, recursive = TRUE)
 
 # Pitched against a pure-white slide headline, so the chrome runs close to
@@ -34,11 +34,26 @@ VIOLIN_EDGE <- "#7fe8cf"
 RULE <- "#b9b7c6"       # the zero line
 BORDER <- "#eae7f2"
 
+# Read PLAAC's own output (alpha = 0.5) rather than a reshaped intermediate.
+# Protein class is the header prefix GyDB uses to name its cores; PR_ULP1,
+# PR_OTU and ORF1_Nterdomain are two-token domain names and keep both tokens,
+# otherwise they collapse into a meaningless "PR" / "ORF1".
+TWO_TOKEN <- c("PR_ULP1", "PR_OTU", "ORF1_Nterdomain")
+
+protein_class_of <- function(seqid) {
+  two <- sub("^([^_]+_[^_]+).*$", "\\1", seqid)
+  ifelse(two %in% TWO_TOKEN, two, sub("_.*$", "", seqid))
+}
+
 # Same filtering as the paper figure, and for the same reason: a core shorter
 # than PLAAC's 60 aa window scores NaN and was never measured, so it is dropped
 # rather than counted as a zero. That is what takes CHR out -- 154 cores, 135
 # of them too short, leaving 19, under the 20 needed to draw a distribution.
-classes <- read_tsv("data/gag_plaac/class_llr.tsv", show_col_types = FALSE) %>%
+classes <- read_tsv("data/processed/gydb/plaac_data/all_cores_a05.tsv", show_col_types = FALSE) %>%
+  transmute(seqid = trimws(SEQid),
+            protein_class = protein_class_of(trimws(SEQid)),
+            llr = LLR,
+            has_prd = as.integer(PRDlen > 0)) %>%
   filter(!is.na(llr)) %>%
   group_by(protein_class) %>% mutate(n_scored = n()) %>% ungroup() %>%
   filter(n_scored >= 20)
@@ -97,8 +112,6 @@ p <- ggplot(classes, aes(x = protein_class, y = llr)) +
 # with on/off transparency, throwing away every anti-aliased edge.
 ggsave(file.path(OUT, "fig_gydb_classes_dark.png"), p, width = 8.8,
        height = 6.0, dpi = 400, bg = "transparent", type = "cairo")
-ggsave(file.path(OUT, "fig_gydb_classes_dark.pdf"), p, width = 8.8,
-       height = 6.0, bg = "transparent", device = cairo_pdf)
 
 cat(sprintf("wrote fig_gydb_classes_dark   %d cores, %d classes, %d PrLD (%s)\n",
             nrow(classes), length(unique(classes$protein_class)), nrow(hits),

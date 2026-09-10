@@ -1,14 +1,42 @@
-# Environment for the Ty1/copia Gag PrLD pipeline.
+# Environment for the Ty1/copia Gag PrLD analysis. Windows (win-64).
 #
-# Linux only. mmseqs2, mafft, trimal and iqtree have no win-64 builds, so on
-# Windows this runs under WSL. The Anaconda default channels are deliberately
-# not used -- conda-forge and bioconda only, which also avoids their licence
-# terms for institutional use.
+# Everything needed to run the scripts in scripts/ and redraw every figure from
+# the committed data:
 #
 #   conda env create -f environment.yml
 #   conda activate copia-prld
+#   pip install --no-deps metapredict==2.65.1        # see the note below
 #
-# PLAAC is a Java jar and is not on conda; download it separately.
+# Direct dependencies are pinned, R included. Conda re-solves the transitive
+# ones at install time, so this is repeatable rather than byte-identical. If an
+# exact rebuild is ever needed, conda-lock will pin all 221 packages by hash:
+#
+#   conda-lock lock -f environment.yml -p win-64 --lockfile conda-lock.yml
+#
+# The Anaconda default channels are deliberately not used -- conda-forge and
+# bioconda only, which also avoids their licence terms for institutional use.
+#
+# NOT in here, and deliberately: mafft, trimal, iqtree and mmseqs2 have no
+# win-64 conda builds at all, so listing them would make this file fail to solve
+# on the machine it is written for. They are needed only to rebuild
+# tree_272/rt.treefile from rt_272.faa, and that treefile is committed, so
+# redrawing any figure never touches them.
+#
+# The versions used to build the committed tree, for the record -- install these
+# under WSL if the phylogeny ever needs rebuilding from scratch:
+#
+#   conda create -n copia-prld-tree -c conda-forge -c bioconda #       mafft=7.525 trimal=1.5.1 iqtree=3.1.3 mmseqs2=18.8cc5c
+#
+#   mafft  --auto data/processed/gydb/rt_272.faa > data/processed/gydb/tree_272/rt.aln
+#   trimal -in    data/processed/gydb/tree_272/rt.aln #          -out   data/processed/gydb/tree_272/rt.trim -automated1
+#   iqtree -s     data/processed/gydb/tree_272/rt.trim -pre data/processed/gydb/tree_272/rt
+#
+# The exact settings behind the committed tree are recorded in tree_272/rt.log
+# and rt.iqtree -- read those before assuming the lines above reproduce it.
+# mmseqs2 belongs to the parked REXdb clustering stage, kept here as a record.
+#
+# PLAAC is not on conda. It is a Java jar built from source -- see
+# plaac/README.md, which needs the openjdk pinned below.
 name: copia-prld
 
 channels:
@@ -18,13 +46,7 @@ channels:
 dependencies:
   - python=3.12
 
-  # Clustering, alignment, phylogenetics
-  - mmseqs2=18.8cc5c
-  - mafft=7.525
-  - trimal=1.5.1
-  - iqtree=3.1.3
-
-  # Runs the PLAAC jar
+  # Runs the PLAAC jar, and builds it from source (plaac/README.md).
   - openjdk=21
 
   # metapredict's model runs on torch; the conda-forge build is CPU-only, which
@@ -33,15 +55,23 @@ dependencies:
   - numpy=2.3.5
 
   # Figures. ggtree is the reason for R -- nothing in Python matches it for
-  # trait-annotated phylogenies.
+  # trait-annotated phylogenies. Every package below is imported by a script in
+  # scripts/; phangorn supplies midpoint() for rooting both trees, and tidyr is
+  # used by the two knuckle figures.
   - r-base=4.5.3
   - r-ggplot2=4.0.3
   - r-dplyr=1.2.1
   - r-readr=2.2.0
-  - r-patchwork=1.3.2
+  - r-tidyr=1.3.2
   - r-scales=1.4.0
   - r-ape=5.8_1
+  - r-phangorn=2.12.1
   - bioconductor-ggtree=4.0.4
+
+  # No script sets a font family, so the figures take whatever the graphics
+  # device defaults to -- which is why the same script renders different type on
+  # Windows and Linux. Pinning the font stack makes the type match too.
+  - fonts-conda-ecosystem
 
   # metapredict has Cython extensions that build from source, so the env needs
   # its own compiler rather than relying on one being installed system-wide.
@@ -49,7 +79,23 @@ dependencies:
   - cython
 
   - pip
-  - pip:
-      # Disorder prediction (L-6). V2, not V3 -- it is the version published
-      # disorder comparisons cite, so scores are interpretable against them.
-      - metapredict==2.65.1
+
+# metapredict is deliberately NOT listed as a pip dependency here.
+#
+# It is not on conda -- pip is the only route -- but putting it in a `pip:`
+# block makes the environment unlockable. conda-lock does not treat the conda
+# `pytorch` package as satisfying pip's `torch`, so it re-resolves torch from
+# PyPI, walks into the nvidia-cublas-cu12 CUDA wheels and fails on every
+# platform. Keeping pip out means conda-lock.yml can pin the whole environment.
+#
+# After activating, install it in one extra step:
+#
+#   pip install --no-deps metapredict==2.65.1
+#
+# --no-deps matters: torch, numpy and cython are already installed above from
+# conda-forge, and without it pip pulls ~2.5 GB of CUDA wheels over the top.
+#
+# V2, not V3 -- it is the version published disorder comparisons cite, so
+# scores are interpretable against them (L-6). It is needed only by
+# disorder_272.py and disorder_all_cores.py, whose output tables are committed;
+# every figure can be redrawn without it.

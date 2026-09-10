@@ -1,105 +1,114 @@
 # Ty1/copia Gag PrLD phylogenetics
 
-Does the disordered N-terminal region of Ty1/copia Gag stay **conserved across
-the superfamily** while its **prion-like composition turns over independently**
-(H1), rather than the PrLD being a single inherited innovation (H0)?
+Does the prion-like domain in Ty1/copia Gag track the phylogeny, or does it turn
+over independently of it?
 
-**The design principle:** the tree and the trait come from two different regions
-of the same element. **RT is aligned** to build the phylogeny — it is the only
-part alignable superfamily-wide. **Gag is scored** to make the trait. They are
-joined by element accession. The tree is never built from Gag.
+The tree and the trait come from two different parts of the same element. **RT
+is aligned** to build the phylogeny — it is the only region alignable across all
+four superfamilies. **Gag is scored** to make the trait. They are joined by
+element name. The tree is never built from Gag.
 
-## Status
-
-The pipeline is being rebuilt one decision at a time, with each scientific
-choice reasoned from the data and signed off before code is written against it.
-See `claude/DECISIONS.md` for what has been settled and what is still open.
-
-`fetch` is implemented. Nothing downstream is.
-
-## Layout
-
-```
-data/REXdb/    the release files (not committed — see below)
-data/          generated sequence sets
-scripts/       the pipeline
-claude/        AI instruction docs and the decisions log — deletable after dev
-```
-
-## Data
-
-Download from <https://github.com/repeatexplorer/rexdb> into `data/REXdb/`:
-
-- `Viridiplantae_v4.0.fasta` — protein domain slices
-- `Viridiplantae_v4.0.classification` — superfamily and lineage
-- `Viridiplantae_v4.0_ALL_info-species-source_taxid` — species and NCBI taxid
-- `Viridiplantae_v4.0_ALL_DNA.fasta` — full element nucleotide sequences
-
-Citation: Neumann et al., *Mobile DNA* 2019, doi:10.1186/s13100-018-0144-1.
-
-Note that REXdb's Gag slices are the capsid core, not the whole ORF. The
-disordered N-terminus is **not** in the protein FASTA — it is recovered from the
-element DNA by `fetch`.
+Data is GyDB. The REXdb arm of the project is parked; its raw files are still
+here so it can be picked up again.
 
 ## Install
 
-The bioinformatics tools have no Windows builds, so on Windows this runs under
-WSL. PLAAC is built separately — see `plaac/README.md`.
+Windows. R comes from the environment too, so `ggtree` and the fonts are pinned
+rather than borrowed from a system install.
 
 ```bash
 conda env create -f environment.yml
 conda activate copia-prld
+pip install --no-deps metapredict==2.65.1
 ```
 
-## Run
+`--no-deps` matters — without it pip installs 2.5 GB of CUDA wheels over the CPU
+torch build. metapredict is only needed to regenerate the disorder tables, which
+are committed, so every figure redraws without it.
+
+PLAAC is a Java jar built from source: see `plaac/README.md`.
+
+## Pipeline
+
+```
+cores-database ──┐
+                 ├─> prep_272.py ──> rt_272.faa ──> [MAFFT → trimAl → IQ-TREE] ──> rt.treefile
+superfamily.csv ─┘                   gag_272.faa                                        │
+                                     traits_272.tsv <───────────────────────────────────┘
+
+cores-database ──> plaac_all_cores.py ──> all_cores_a05.tsv
+               └─> disorder_*.py       ──> disorder_272.tsv, disorder_all.tsv
+```
+
+`prep_272.py` takes every element carrying a clean GAG **and** RT core (no `X`) —
+272 of them — and writes the tree input, the Gag set, and the tip table. The six
+figure scripts read `traits_272.tsv` and `rt.treefile`.
+
+The tree build itself is the one step Windows can't do: `mafft`, `trimal` and
+`iqtree` have no win-64 builds. Versions and commands are at the top of
+`environment.yml`, to run under WSL. `rt.treefile` is committed, so this is only
+for rebuilding the phylogeny from scratch.
 
 ```bash
-python  scripts/fetch.py     # sequence sets from REXdb        (stdlib only)
-python  scripts/score.py     # trait table: composition, PLAAC, disorder
-python  scripts/tree.py      # sample -> MAFFT -> trimAl -> IQ-TREE
-Rscript scripts/plots.R      # figures
+python  scripts/plaac_all_cores.py        # PLAAC a=0.5 over all 2,636 cores
+python  scripts/prep_272.py               # the 272 set
+python  scripts/disorder_272.py           # metapredict, the 272 Gag cores
+python  scripts/disorder_all_cores.py     # metapredict, every core
+Rscript scripts/fig_gydb_rt_layers.R      # then the five other fig_*/figures_* scripts
 ```
 
-`fetch` reads `data/REXdb/` and writes to `data/`:
+## Files
 
-| file | contents |
+**`data/raw/gydb/`** — the source. `cores-database` is GyDB's 2,636 protein
+cores, named `DOMAIN_element` (`GAG_17.6`, `RT_17.6`), covering 779 elements.
+`gydb_superfamily_host.csv` is a hand-curated sheet mapping element to
+superfamily, host and clade — not a GyDB download, and the only copy anywhere.
+
+**`data/raw/rexdb/`** — REXdb v4.0 release files. Parked, unread by any script.
+
+**`data/processed/gydb/`**
+
+| file | what it is |
 | --- | --- |
-| `elements.tsv` | one row per copia/gypsy element, metadata and flags |
-| `rt_copia.faa`, `rt_gypsy.faa` | RT slices as published — these build the tree |
-| `gag_copia.faa`, `gag_gypsy.faa` | Gag N-terminal region + capsid core |
+| `rt_272.faa` | RT cores — the tree is built from these |
+| `gag_272.faa` | the matching Gag cores, scored but never aligned |
+| `traits_272.tsv` | the tip table: superfamily, host, clade, length, LLR, PrLD coords, knuckle |
+| `copia_tree_tips.txt` | which elements also sit on the REXdb copia tree |
+| `tree_272/` | `rt.treefile` plus the alignment, trimmed alignment and IQ-TREE log behind it |
+| `plaac_data/all_cores_a05.tsv` | PLAAC at α = 0.5 over all cores |
+| `disorder_272.tsv`, `disorder_all.tsv` | metapredict, per Gag core and per class |
+| `InterProScan/part1–4.tsv` | full domain calls for 327 elements; the zinc-knuckle source |
 
-RT is used as REXdb publishes it. Gag is re-derived from element DNA, because
-the published Gag slice is the capsid core only and does not contain the
-N-terminal region this project is about: the slice is located in a six-frame
-translation to fix the reading frame, then extended upstream to the in-frame
-stop. There is no length cap: capping at 75 aa removed exactly the long
-N-terminus elements that carry the signal (F-18).
+**`scripts/`** — four Python stages that build tables, six R scripts that draw
+figures. **`figures/`** — the six PNGs those produce. **`plaac/`** — the jar and
+the source to rebuild it.
 
-The later stages add `traits.tsv` (one row per Gag sequence: composition,
-charge, PLAAC at three alpha values, metapredict disorder), `tree/rt.treefile`
-and `figures/`.
+## Three things that will bite you
 
-Every element with an RT enters the tree, so the tree is larger than the trait
-set — prune it on `gag_status` for the comparative analysis. Nothing is filtered
-on unresolved residues; the counts go in `rt_ambiguous` and `gag_ambiguous` so
-scoring can decide. Copia and gypsy are never merged.
+**`all_cores_a05.tsv` is the single ruler.** Every LLR in the project is measured
+against it. At α < 1 the background is partly the input's own composition, so
+rescoring a subset gives numbers that disagree with every figure already made.
+`plaac_all_cores.py` regenerates it and defaults to α = 0.5; running it at
+another α silently moves everything downstream.
 
-Current result, from 14,355 elements:
+**Don't subset the InterProScan files.** The figures take their denominator from
+the set of elements that were *scanned*, so dropping the non-knuckle rows pushes
+every bar to 100%.
 
-| | elements | RT | Gag | `no_slice` | `unplaceable` | `no_nterm` | `record_mismatch` |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| copia | 5,606 | 5,596 | 5,042 | 442 | 79 | 33 | 10 |
-| gypsy | 8,749 | 8,748 | 8,486 | 167 | 84 | 11 | 1 |
+**Superfamily is only partly curated.** The sheet covers 234 of the 336
+Gag-bearing elements. The rest are `CopiaSL*` / `GypsySL*` entries typed from
+their own filename by `classify()` in `prep_272.py` — sound, but not curation,
+and those tips carry no host or clade. Of the 272 tips, 231 are curated matches
+and 39 are name-assigned; the 39 are exactly the ones with a blank `host`.
 
-`gag_status` says why a trait is missing. `no_slice` — REXdb published no Gag.
-`unplaceable` — it did, but the slice isn't contiguous in the element's own DNA,
-usually a frameshifted pseudogene. `record_mismatch` — no part of the slice is
-in the DNA at all, so the two release files disagree; these are the only
-elements also dropped from the tree. `gag_core_exact` flags cores placed by
-their first 30 aa rather than in full.
+Of the 333 elements with both cores, the 61 that don't reach the tree were all
+dropped for one reason: an `X` in the sequence.
 
-## Later stages
+## Result
 
-Not built: cluster (MMseqs2), sampling, tree (MAFFT → trimAl → IQ-TREE), score
-(PLAAC, charge, disorder, LLPS), phylogenetic signal, ancestral reconstruction,
-report.
+26 prion-like domains across the whole 2,636-core database. All 26 are in Gag —
+none in the other 2,300 proteins — and the effect holds within every length
+band, so it isn't Gag simply being longer.
+
+Citations: GyDB, Llorens et al. *NAR* 2011. PLAAC, Lancaster et al.
+*Bioinformatics* 2014. metapredict, Emenecker et al. *Biophys J* 2021.
