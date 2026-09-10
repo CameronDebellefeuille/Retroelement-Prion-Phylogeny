@@ -1,48 +1,34 @@
-# The GyDB RT tree as presentation slides, all sharing one geometry.
+# The GyDB RT tree with Gag PrLDs mapped onto the tips.
 #
-#   fig_gydb_rt_bare.{png,pdf}    grey tree, nothing else
-#   fig_gydb_rt_nterm.{png,pdf}   N-terminal domains only, PrLD rate per superfamily
-#   fig_gydb_rt_full.{png,pdf}    every called domain, PrLD rate per superfamily
-#   fig_gydb_rt_bare_fill.{png,pdf}   the bare tree cropped to fill the frame
+#   fig_gydb_rt_full_dark.png   every called domain, PrLD rate per superfamily
 #
-# Each is written twice: once on the paper surface, and once as *_dark -- the
-# same geometry repainted light-on-dark with a transparent background, so it
-# drops onto a dark slide with no white box around it.
+# 272 tips. The tree is built from RT; the PrLD is a Gag trait joined on element
+# name. Tips are named on the rim, PrLD-bearing ones marked and bolded, and each
+# superfamily block carries its hit rate as hits/n (pct).
 #
-# No disorder ring on any of them. The radial budget is therefore the same on
-# every slide -- tips sit at one radius, markers just outside them, names beyond
-# that, superfamily blocks on the rim -- so bare -> nterm -> full is a reveal:
-# advancing changes only what is painted, never where anything sits. The one
-# exception is _fill, which crops to the tree and is NOT interchangeable with
-# the others; it is for a standalone slide.
+# Written light-on-dark on a transparent background, so it drops onto a dark
+# slide with no white box around it. build() still takes dark = FALSE for a
+# paper-surface version; only the dark one is built.
 #
-# The superfamily block reports the PrLD RATE, in the same hits/n (pct) form
-# figures_circular.R uses, and it is recomputed per zone -- so the N-terminal
-# slide reports N-terminal rates, not whole-Gag rates carried over. That is the
-# whole point of showing the two side by side.
+# No disorder ring here -- that is figures_combined.R, which draws the same tree
+# with disorder as a bar ring. Both are midpoint-rooted so tip order is
+# identical between them. Rooting is display-only (L-3).
 #
-# Midpoint-rooted, matching data/gag_plaac/figures_combined.R, so tip order is
-# identical to the figure already in the deck. Rooting is display-only (L-3).
+# This script previously also built a bare tree, an N-terminal-only tree and a
+# text-free registered overlay set, as a slide reveal. Those are retired; the
+# untrimmed version is in the backup as fig_gydb_rt_layers.R_untrimmed. build()
+# still accepts layers=, zones=, frame=, fill= and legend=, so the reveal can be
+# rebuilt by adding calls back.
 #
-# The fig_gydb_rt_ov_*_dark set is the overlay set: one frame, four registered
-# layers, meant to be stacked at a single position on a dark slide. It is a TWO
-# STAGE build -- this script, then the shared crop, which rewrites those four
-# in place. Running this script alone leaves them uncropped and sitting in a
-# wide transparent margin, so run both:
-#
+# Run from the repo root:
 #   Rscript scripts/fig_gydb_rt_layers.R
-#   python scripts/crop_registered.py \
-#     data/gag_plaac/figures/fig_gydb_rt_ov_bare_dark.png \
-#     data/gag_plaac/figures/fig_gydb_rt_ov_colour_dark.png \
-#     data/gag_plaac/figures/fig_gydb_rt_ov_nterm_dark.png \
-#     data/gag_plaac/figures/fig_gydb_rt_ov_full_dark.png
 
 suppressPackageStartupMessages({
   library(readr); library(dplyr); library(ggplot2)
   library(ape); library(ggtree)
 })
 
-OUT <- "data/gag_plaac/figures"
+OUT <- "figures"
 dir.create(OUT, showWarnings = FALSE, recursive = TRUE)
 
 INK <- "#0b0b0b"; INK2 <- "#52514e"; SURFACE <- "#fcfcfb"
@@ -106,8 +92,8 @@ longest_run <- function(ys) {
   mean(range(ys[(breaks[best] + 1):breaks[best + 1]]))
 }
 
-traits <- read_tsv("data/gag_plaac/traits_272.tsv", show_col_types = FALSE)
-tree <- phangorn::midpoint(read.tree("data/gag_plaac/tree_272/rt.treefile"))
+traits <- read_tsv("data/processed/gydb/traits_272.tsv", show_col_types = FALSE)
+tree <- phangorn::midpoint(read.tree("data/processed/gydb/tree_272/rt.treefile"))
 groups <- split(traits$tip, traits$superfamily)
 
 
@@ -269,51 +255,19 @@ build <- function(file, layers = character(0), zones = ALL_ZONES,
   bg <- if (dark) "transparent" else SURFACE
   ggsave(file.path(OUT, paste0(file, ".png")), plot, width = 11.5,
          height = 10.2, dpi = 400, bg = bg, type = "cairo")
-  ggsave(file.path(OUT, paste0(file, ".pdf")), plot, width = 11.5,
-         height = 10.2, bg = bg, device = cairo_pdf)
   cat(sprintf("wrote %-27s %3d marks   %s\n", file, nrow(marks),
               paste(sprintf("%s %d/%d", labels$superfamily, labels$hits,
                             labels$n), collapse = "  ")))
 }
 
 
-for (dark in c(FALSE, TRUE)) {
-  suffix <- if (dark) "_dark" else ""
-  build(paste0("fig_gydb_rt_bare", suffix), dark = dark)
-  build(paste0("fig_gydb_rt_nterm", suffix), dark = dark,
-        layers = c("colour", "prld", "tips", "blocks"), zones = "N-terminal")
-  build(paste0("fig_gydb_rt_full", suffix), dark = dark,
-        layers = c("colour", "prld", "tips", "blocks"), zones = ALL_ZONES)
-  # Light only: fig_gydb_rt_bare_fill_dark.png is already in the deck, cropped
-  # by scripts/slide_transparent.py to a tighter box than fill= produces here.
-  # Rebuilding it from R would silently reframe a slide that is finished.
-  if (!dark) build("fig_gydb_rt_bare_fill", fill = TRUE)
-}
-
-
-# The overlay set: one frame, four registered layers, dark and text-free.
+# One tree: every called domain, tips named, superfamily blocks and hit counts
+# on the rim. Light and dark are the same figure repainted.
 #
-# These are meant to be stacked at one position on the slide, so all four are
-# drawn in the SAME frame. FRAME pins the outer edge to a fixed multiple of the
-# tree radius instead of the default budget, which is derived from the
-# superfamily blocks -- and that budget depends on the width of the hit-count
-# string, so "8/98 (8%)" and "45/98 (46%)" quietly produce different frames.
-# The legend goes for the same reason: it steals panel width, so it shrinks the
-# tree only on the slides that have one. Frame drift of a few percent is
-# invisible on a laptop and impossible to miss when the slides cross-fade.
-#
-# 1.66 is the tightest frame that still clears the longest hit name at the
-# sizes below: label_start is 1.09r, and 10 characters at size 5 reach ~0.52r.
-FRAME <- 1.66
-
-build("fig_gydb_rt_ov_bare_dark", dark = TRUE, frame = FRAME, legend = FALSE)
-build("fig_gydb_rt_ov_colour_dark", layers = "colour",
-      dark = TRUE, frame = FRAME, legend = FALSE)
-# Markers only, no names. Add "hits" back to either layers= below to get the
-# spread-and-connected labels instead; the code for them is still in build().
-build("fig_gydb_rt_ov_nterm_dark", layers = c("colour", "prld"),
-      zones = "N-terminal", mark_size = 5,
-      dark = TRUE, frame = FRAME, legend = FALSE)
-build("fig_gydb_rt_ov_full_dark", layers = c("colour", "prld"),
-      zones = ALL_ZONES, mark_size = 4,
-      dark = TRUE, frame = FRAME, legend = FALSE)
+# The bare and N-terminal layers, and the text-free registered overlay set that
+# went with them, were a presentation reveal and are no longer built here. The
+# untrimmed script is in the backup as fig_gydb_rt_layers.R_untrimmed if that
+# sequence is ever wanted again; build() still takes the layers=, zones=,
+# frame=, fill= and legend= arguments they used.
+build("fig_gydb_rt_full_dark", dark = TRUE,
+      layers = c("colour", "prld", "tips", "blocks"), zones = ALL_ZONES)

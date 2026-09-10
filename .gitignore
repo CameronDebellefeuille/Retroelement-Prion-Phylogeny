@@ -1,5 +1,5 @@
 # Sequence data, generated sequence sets, trees and figures are not committed.
-# See README.md for how to obtain the REXdb files.
+# See README.md for how to obtain the REXdb and GyDB files.
 data/
 
 # PLAAC is built from source. See plaac/README.md -- that file is committed.
@@ -9,3 +9,6 @@ plaac/*
 # Python
 __pycache__/
 *.py[cod]
+
+# R writes this whenever a plot is drawn without an explicit device.
+Rplots.pdf

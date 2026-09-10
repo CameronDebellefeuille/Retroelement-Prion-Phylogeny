@@ -6,7 +6,6 @@ Not committed — build it here. There are no releases and no prebuilt jar.
 git clone --depth 1 https://github.com/whitehead/plaac.git /tmp/plaac
 cp -r /tmp/plaac/cli/src plaac/
 mkdir -p plaac/example && cp /tmp/plaac/cli/example/four_classic_prions.fasta plaac/example/
-cp -r /tmp/plaac/web/bg_freqs plaac/
 
 cd plaac && mkdir -p target
 javac -source 8 -target 8 -nowarn -d target src/*.java
@@ -16,6 +15,15 @@ mv target/plaac.jar plaac.jar && rm -rf target
 ```
 
 Needs a JDK; `openjdk` is in `environment.yml`.
+
+The upstream `src/` also carries `prd_freq_scer_04.txt`, `prd_freq_scer_28.txt`
+and `scer_fg_28.fasta`; they are not kept here. The first two are compiled into
+`plaac.java` as literal arrays and the third is unreferenced, so none of them is
+read at build or run time. `web/bg_freqs/` is likewise not kept — those are the
+per-species background frequencies for the `-B` flag, which no script here uses.
+
+The built jar is self-contained: it bundles `util/` and `mainClass`, so
+`plaac.jar` alone is enough to run. The `src/` tree is kept only to rebuild it.
 
 **Check it works before trusting any output.** The four classic prions should
 score LLR 29–51 with a domain called for each:

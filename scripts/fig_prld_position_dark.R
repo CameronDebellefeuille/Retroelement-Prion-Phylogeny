@@ -20,7 +20,7 @@ suppressPackageStartupMessages({
   library(readr); library(dplyr); library(ggplot2); library(grid)
 })
 
-OUT <- "data/gag_plaac/figures"
+OUT <- "figures"
 dir.create(OUT, showWarnings = FALSE, recursive = TRUE)
 
 INK <- "#ffffff"        # element names
@@ -33,7 +33,7 @@ FAMILY <- c("Ty3/Gypsy"    = "#FF8A45",
             "Retroviridae" = "#C58BF5",
             "Bel/Pao"      = "#FF6BA6")
 
-traits <- read_tsv("data/gag_plaac/traits_272.tsv", show_col_types = FALSE)
+traits <- read_tsv("data/processed/gydb/traits_272.tsv", show_col_types = FALSE)
 
 called <- traits %>%
   filter(has_prd == 1) %>%
@@ -105,8 +105,6 @@ for (i in seq_along(strips)) {
 # transparency, throwing away every anti-aliased edge.
 ggsave(file.path(OUT, "fig_prld_position_dark.png"), gt, width = 9.2,
        height = 6.0, dpi = 400, bg = "transparent", type = "cairo")
-ggsave(file.path(OUT, "fig_prld_position_dark.pdf"), gt, width = 9.2,
-       height = 6.0, bg = "transparent", device = cairo_pdf)
 
 cat(sprintf("wrote fig_prld_position_dark -- %d domains; strips %s\n",
             nrow(called),
