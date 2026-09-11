@@ -14,10 +14,6 @@ conda activate copia-prld
 pip install --no-deps metapredict==2.65.1
 ```
 
-`--no-deps` matters — without it pip installs 2.5 GB of CUDA wheels over the CPU
-torch build. metapredict is only needed to regenerate the disorder tables, which
-are committed, so every figure redraws without it.
-
 PLAAC is a Java jar built from source: see `plaac/README.md`.
 
 ## Pipeline
