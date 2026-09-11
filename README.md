@@ -19,18 +19,33 @@ PLAAC is a Java jar built from source: see `plaac/README.md`.
 ## Pipeline
 
 ```
-cores-database ──┐
-                 ├─> prep_272.py ──> rt_272.faa ──> [MAFFT → trimAl → IQ-TREE] ──> rt.treefile
-superfamily.csv ─┘                   gag_272.faa                                        │
-                                     traits_272.tsv <───────────────────────────────────┘
-
-cores-database ──> plaac_all_cores.py ──> all_cores_a05.tsv
-               └─> disorder_*.py       ──> disorder_272.tsv, disorder_all.tsv
+cores-database ──> plaac_all_cores.py ──> all_cores_a05.tsv ──┐
+                                                              │
+cores-database ──┐                                            │
+superfamily.csv ─┴─────────> prep_272.py <────────────────────┤
+                                  │                           │
+                                  ├─> rt_272.faa ──> MAFFT → trimAl → IQ-TREE ──> rt.treefile
+                                  ├─> gag_272.faa ──> disorder_272.py ──> disorder_272.tsv
+                                  └─> traits_272.tsv          │
+                                                              │
+cores-database ───────────────────────────────────────────────┴─> disorder_all_cores.py ──> disorder_all.tsv
 ```
 
 `prep_272.py` takes every element carrying a clean GAG **and** RT core (no `X`) —
-272 of them — and writes the tree input, the Gag set, and the tip table. The six
-figure scripts read `traits_272.tsv` and `rt.treefile`.
+272 of them — and writes the tree input, the Gag set, and the tip table. It runs
+before `disorder_272.py`, which scores the `gag_272.faa` it produces.
+
+The tree and the traits are independent products — nothing joins them until a
+figure script reads both:
+
+```
+rt.treefile + traits_272.tsv                     ──> fig_gydb_rt_layers.R
+rt.treefile + traits_272.tsv + disorder_272.tsv  ──> figures_combined.R
+traits_272.tsv + InterProScan/                   ──> fig_knuckle_superfamily_dark.R
+traits_272.tsv                                   ──> fig_prld_position_dark.R
+all_cores_a05.tsv                                ──> fig_gydb_classes_dark.R
+disorder_all.tsv                                 ──> figures_disorder_classes.R
+```
 
 The tree build itself is the one step Windows can't do: `mafft`, `trimal` and
 `iqtree` have no win-64 builds. Versions and commands are at the top of
