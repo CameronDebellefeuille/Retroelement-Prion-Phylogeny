@@ -164,11 +164,8 @@ def main():
             "prld_end": end,
             "prld_len": len(prld),
             "plaac_llr": t["llr"],
-            "prld_zone": t["prd_zone"],
             "zinc_knuckle": knuckle,
             "knuckle_n": len(hit),
-            "knuckle_signatures": ",".join(sorted({h[0] for h in hit})),
-            "knuckle_positions": ",".join("%s-%s" % (h[1], h[2]) for h in hit),
             "prld_pct_Q": pc["pct_Q"],
             "prld_pct_N": pc["pct_N"],
             "prld_pct_QN": pc["pct_QN"],
@@ -180,8 +177,6 @@ def main():
             "prld_pct_charged": pc["pct_charged"],
             "gag_pct_QN": gc["pct_QN"],
             "gag_mean_disorder": d.get("mean_disorder", ""),
-            "gag_frac_disordered": d.get("frac_disordered", ""),
-            "gag_nterm40_disorder": d.get("nterm40_disorder", ""),
             "gag_aa": gag,
             "prld_aa": prld})
 
@@ -203,12 +198,10 @@ def main():
     fasta(os.path.join(OUT, "candidate_prld.faa"), "prld_aa", "PLAAC-called domains only")
 
     cols = ["element", "superfamily", "host", "gag_len", "prld_start", "prld_end",
-            "prld_len", "plaac_llr", "prld_zone", "zinc_knuckle", "knuckle_n",
-            "knuckle_signatures", "knuckle_positions",
+            "prld_len", "plaac_llr", "zinc_knuckle", "knuckle_n",
             "prld_pct_Q", "prld_pct_N", "prld_pct_QN", "prld_pct_G", "prld_pct_S",
             "prld_pct_Y", "prld_pct_P", "prld_net_charge", "prld_pct_charged",
-            "gag_pct_QN", "gag_mean_disorder", "gag_frac_disordered",
-            "gag_nterm40_disorder", "gag_aa", "prld_aa"]
+            "gag_pct_QN", "gag_mean_disorder", "gag_aa", "prld_aa"]
     with open(os.path.join(OUT, "candidates.tsv"), "w", encoding="utf-8",
               newline="\n") as fh:
         w = csv.DictWriter(fh, fieldnames=cols, delimiter="\t",
