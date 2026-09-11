@@ -36,6 +36,7 @@ TRAITS = os.path.join(REPO, "data", "processed", "gydb", "traits_272.tsv")
 INTERPRO = os.path.join(REPO, "data", "processed", "gydb", "InterProScan")
 DISORDER = os.path.join(REPO, "data", "processed", "gydb", "disorder_272.tsv")
 OUT = os.path.join(REPO, "candidates")
+LLPS = os.path.join(OUT, "scores.csv")
 
 CANDIDATES = ["Tom", "297", "17.6", "Yoyo", "HMS-Beagle", "Nomad",
               "EFV", "BFV", "FFV"]
@@ -105,6 +106,28 @@ def read_disorder(path):
             csv.DictReader(open(path, encoding="utf-8"), delimiter="\t")}
 
 
+def read_llps(path):
+    """catGRANULE 2.0 LLPS propensity, one score per candidate.
+
+    Run externally on the web service -- L-7 leaves catGRANULE as an external
+    input, so scores.csv is pasted in rather than computed here. It was run on
+    candidate_prld.faa, i.e. the DOMAIN, not the whole Gag: every profile in
+    data.csv is exactly prld_len long. So the score is the propensity of the
+    prion-like domain on its own, which is not the same question as whether the
+    intact Gag phase separates.
+
+    Missing file is not an error -- the table is still useful without it.
+    """
+    if not os.path.exists(path):
+        return {}
+    out = {}
+    for r in csv.DictReader(open(path, encoding="utf-8-sig")):
+        name = (r.get("Name") or "").strip()
+        if name:
+            out[name] = r["LLPS_Score"].strip()
+    return out
+
+
 def read_interpro(directory):
     """Return (scanned elements, knuckle hits per element).
 
@@ -139,6 +162,7 @@ def main():
 
     scanned, knuckles = read_interpro(INTERPRO)
     disorder = read_disorder(DISORDER)
+    llps = read_llps(LLPS)
 
     rows = []
     for name in CANDIDATES:
@@ -177,6 +201,7 @@ def main():
             "prld_pct_charged": pc["pct_charged"],
             "gag_pct_QN": gc["pct_QN"],
             "gag_mean_disorder": d.get("mean_disorder", ""),
+            "llps_score": llps.get(name, ""),
             "gag_aa": gag,
             "prld_aa": prld})
 
@@ -201,13 +226,29 @@ def main():
             "prld_len", "plaac_llr", "zinc_knuckle", "knuckle_n",
             "prld_pct_Q", "prld_pct_N", "prld_pct_QN", "prld_pct_G", "prld_pct_S",
             "prld_pct_Y", "prld_pct_P", "prld_net_charge", "prld_pct_charged",
-            "gag_pct_QN", "gag_mean_disorder", "gag_aa", "prld_aa"]
+            "gag_pct_QN", "gag_mean_disorder", "llps_score", "gag_aa", "prld_aa"]
     with open(os.path.join(OUT, "candidates.tsv"), "w", encoding="utf-8",
               newline="\n") as fh:
         w = csv.DictWriter(fh, fieldnames=cols, delimiter="\t",
                            lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
+
+    if llps:
+        ranked = sorted(rows, key=lambda r: -float(r["llps_score"]))
+        lcols = ["rank", "element", "superfamily", "host", "llps_score",
+                 "prld_len", "plaac_llr", "prld_pct_QN", "prld_net_charge",
+                 "prld_pct_Y", "gag_mean_disorder", "zinc_knuckle"]
+        with open(os.path.join(OUT, "LLPS_score.tsv"), "w", encoding="utf-8",
+                  newline="\n") as fh:
+            w = csv.DictWriter(fh, fieldnames=lcols, delimiter="\t",
+                               lineterminator="\n")
+            w.writeheader()
+            for i, r in enumerate(ranked, 1):
+                w.writerow({**{k: r[k] for k in lcols if k in r}, "rank": i})
+        missing = [r["element"] for r in rows if not r["llps_score"]]
+        if missing:
+            print("no LLPS score for: %s" % ", ".join(missing))
 
     print("%d candidates -> %s" % (len(rows), OUT))
     print("%-12s %-13s %5s %10s %7s %8s %6s %6s %6s %9s" %
