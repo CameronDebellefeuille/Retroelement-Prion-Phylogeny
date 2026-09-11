@@ -98,6 +98,7 @@ dropped for one reason: an `X` in the sequence.
 Citations: GyDB, Llorens et al. *NAR* 2011. PLAAC, Lancaster et al.
 *Bioinformatics* 2014. metapredict, Emenecker et al. *Biophys J* 2021.
 
-##**AI Disclaimer**
+## AI Disclaimer
+
 Claude Code was used to assist with writing and debugging analysis scripts.
 I designed the analyses, verified all outputs, and am responsible for the interpretations presented here.
