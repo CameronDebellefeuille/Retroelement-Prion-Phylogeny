@@ -1,4 +1,4 @@
-# Ty1/copia Gag PrLD phylogenetics
+# LTR Retrotransposon Gag PrLD phylogenetics
 
 Data is GyDB. The REXdb arm of the project is parked; its raw files are still
 here so it can be picked up again.
