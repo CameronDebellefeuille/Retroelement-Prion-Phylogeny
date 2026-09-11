@@ -1,13 +1,5 @@
 # Ty1/copia Gag PrLD phylogenetics
 
-Does the prion-like domain in Ty1/copia Gag track the phylogeny, or does it turn
-over independently of it?
-
-The tree and the trait come from two different parts of the same element. **RT
-is aligned** to build the phylogeny — it is the only region alignable across all
-four superfamilies. **Gag is scored** to make the trait. They are joined by
-element name. The tree is never built from Gag.
-
 Data is GyDB. The REXdb arm of the project is parked; its raw files are still
 here so it can be picked up again.
 
@@ -83,18 +75,6 @@ superfamily, host and clade — not a GyDB download, and the only copy anywhere.
 figures. **`figures/`** — the six PNGs those produce. **`plaac/`** — the jar and
 the source to rebuild it.
 
-## Three things that will bite you
-
-**`all_cores_a05.tsv` is the single ruler.** Every LLR in the project is measured
-against it. At α < 1 the background is partly the input's own composition, so
-rescoring a subset gives numbers that disagree with every figure already made.
-`plaac_all_cores.py` regenerates it and defaults to α = 0.5; running it at
-another α silently moves everything downstream.
-
-**Don't subset the InterProScan files.** The figures take their denominator from
-the set of elements that were *scanned*, so dropping the non-knuckle rows pushes
-every bar to 100%.
-
 **Superfamily is only partly curated.** The sheet covers 234 of the 336
 Gag-bearing elements. The rest are `CopiaSL*` / `GypsySL*` entries typed from
 their own filename by `classify()` in `prep_272.py` — sound, but not curation,
@@ -103,12 +83,6 @@ and 39 are name-assigned; the 39 are exactly the ones with a blank `host`.
 
 Of the 333 elements with both cores, the 61 that don't reach the tree were all
 dropped for one reason: an `X` in the sequence.
-
-## Result
-
-26 prion-like domains across the whole 2,636-core database. All 26 are in Gag —
-none in the other 2,300 proteins — and the effect holds within every length
-band, so it isn't Gag simply being longer.
 
 Citations: GyDB, Llorens et al. *NAR* 2011. PLAAC, Lancaster et al.
 *Bioinformatics* 2014. metapredict, Emenecker et al. *Biophys J* 2021.
