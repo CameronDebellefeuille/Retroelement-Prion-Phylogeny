@@ -1,32 +1,32 @@
 ; PLAAC-called domains only -- PROTEIN (amino acid), not DNA. See scripts/candidate_selection.py
->Tom | Ty3/Gypsy | Drosophila ananassae | Gag 398 aa | PrLD 211-316 | LLR 23.017 | zinc knuckle: no
+>Tom | Ty3/Gypsy | Drosophila ananassae | Gag 398 aa | PrLD 211-316 | LLR 23.017 | zinc knuckle: no | Q+N 29.2% | net charge +8
 PNFYQNPKAFKNYPINQSQYQPRYPQYPHPLQPNFNPYMHAPRPIYTQQLSNNQPMGPGQ
 TYPGPNRYMNPQPIFNRIPFPKSNFNLTPQTQQPRMPSNPNFPLQQ
->297 | Ty3/Gypsy | Drosophila melanogaster | Gag 414 aa | PrLD 205-320 | LLR 24.203 | zinc knuckle: no
+>297 | Ty3/Gypsy | Drosophila melanogaster | Gag 414 aa | PrLD 205-320 | LLR 24.203 | zinc knuckle: no | Q+N 34.5% | net charge +11
 NKNSNSNQNSKTQKFNTNVQTQNRPSYSQYSQPFQPNFNQYIQPFRPSYTQQITNNPPMW
 HAPNYFRPNQYINPQPIIQKNHFQQYPNKAQFPQTTHFRGNTYPRLQQPSTYKNTN
->17.6 | Ty3/Gypsy | Drosophila melanogaster | Gag 439 aa | PrLD 216-337 | LLR 32.396 | zinc knuckle: no
+>17.6 | Ty3/Gypsy | Drosophila melanogaster | Gag 439 aa | PrLD 216-337 | LLR 32.396 | zinc knuckle: no | Q+N 37.7% | net charge +6
 NQNTNQSNNIRKYPTPFLHYNSPIPYQAPQIYQTPPTNNPLYRHPIPYHPNPNNVFQPSQ
 QNNVFQPSQQNNAFQPNQRTNFTSRPIFNTNRNNAFDQNRFGQQPQYQNQQSTQNSSSYV
 PN
->Yoyo | Ty3/Gypsy | Ceratitis capitata | Gag 470 aa | PrLD 301-365 | LLR 25.349 | zinc knuckle: no
+>Yoyo | Ty3/Gypsy | Ceratitis capitata | Gag 470 aa | PrLD 301-365 | LLR 25.349 | zinc knuckle: no | Q+N 40.0% | net charge +5
 PQRNINHNNQPFYPQLAHIPQAINPINRFSQHPQYRQHQYQYHPQYQYQPQYQQQQRFRP
 NQFFN
->HMS-Beagle | Ty3/Gypsy | Drosophila melanogaster | Gag 467 aa | PrLD 266-357 | LLR 11.059 | zinc knuckle: no
+>HMS-Beagle | Ty3/Gypsy | Drosophila melanogaster | Gag 467 aa | PrLD 266-357 | LLR 11.059 | zinc knuckle: no | Q+N 26.1% | net charge +10
 NQTFRSNHAANKGQQSSFRGNEKPIPAPRNFQPSNAFGHRQPPPVPPRHPMRRPPQYLGQ
 PFPAPRQHVSNFGNAPFIPPRQNYQQQWQQYN
->Nomad | Ty3/Gypsy | Drosophila melanogaster | Gag 417 aa | PrLD 245-321 | LLR 10.412 | zinc knuckle: no
+>Nomad | Ty3/Gypsy | Drosophila melanogaster | Gag 417 aa | PrLD 245-321 | LLR 10.412 | zinc knuckle: no | Q+N 20.8% | net charge +9
 QNVMSRNFTVQNYQPSGAPRFAGPYQHQARPPFRTPFSPGSGRFSQNSYRTQGPRQAIKM
 ESNRSGQSYQSGYSGRQ
->EFV | Retroviridae | Equidae sp. | Gag 559 aa | PrLD 421-559 | LLR 24.567 | zinc knuckle: no
+>EFV | Retroviridae | Equidae sp. | Gag 559 aa | PrLD 421-559 | LLR 24.567 | zinc knuckle: no | Q+N 34.5% | net charge +11
 SSNQRRQETAGGNQPQTQPQQQNTFSNQTNQRGNQRQWQNRGTDSQRRYFFRPRPSQPQR
 YGSNQGPDNPNPYRGRDSTNQSGQERQLPQQQQGSRRGPGRNTNSGNNTVHTVRQVESSQ
 LQQNASPTASPSTNQGQQP
->BFV | Retroviridae | Bovidae sp. | Gag 544 aa | PrLD 382-544 | LLR 24.777 | zinc knuckle: no
+>BFV | Retroviridae | Bovidae sp. | Gag 544 aa | PrLD 382-544 | LLR 24.777 | zinc knuckle: no | Q+N 30.1% | net charge +16
 NNQPPRQQPQRRQQPRRTGNQEERGQRNRGRQNAQTPRQEGNRLQNSQLPGPRDCPNNSN
 QPRYPLRPNPQQPQRYGQEQNRGNNPNPYRQPTPGNGNQNRNFSRGPAPVNEQSRGRGRS
 SQGTNNTGSSAVHSVRLTSAAPPIPPQDAGTPPTSSGNQGQSS
->FFV | Retroviridae | Felis catus | Gag 514 aa | PrLD 352-483 | LLR 20.675 | zinc knuckle: no
+>FFV | Retroviridae | Felis catus | Gag 514 aa | PrLD 352-483 | LLR 20.675 | zinc knuckle: no | Q+N 27.3% | net charge +15
 QTQPLQTRPRNPGRSQQGQLNQPRPQNRANQSYRPPRQQQQHSDVPEQRDQRGPSQPPRG
 SGGGYNFRRNPQQPQRYGQGPPGPNPYRRFGDGGNPQQQGPPPNRGPDQGPRPGGNPRGG
 GRGQGPRNGGGS
