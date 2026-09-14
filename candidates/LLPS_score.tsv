@@ -1,0 +1,10 @@
+rank	element	superfamily	host	llps_score	prld_len	plaac_llr	prld_pct_QN	prld_net_charge	prld_pct_Y	gag_mean_disorder	zinc_knuckle
+1	BFV	Retroviridae	Bovidae sp.	0.695	163	24.777	30.1	16	1.8	0.4788	no
+2	EFV	Retroviridae	Equidae sp.	0.655	139	24.567	34.5	11	2.2	0.4337	no
+3	Nomad	Ty3/Gypsy	Drosophila melanogaster	0.62	77	10.412	20.8	9	6.5	0.4292	no
+4	FFV	Retroviridae	Felis catus	0.615	132	20.675	27.3	15	3.0	0.3598	no
+5	Tom	Ty3/Gypsy	Drosophila ananassae	0.485	106	23.017	29.2	8	8.5	0.5606	no
+6	HMS-Beagle	Ty3/Gypsy	Drosophila melanogaster	0.47	92	11.059	26.1	10	3.3	0.4638	no
+7	297	Ty3/Gypsy	Drosophila melanogaster	0.44	116	24.203	34.5	11	7.8	0.5411	no
+8	17.6	Ty3/Gypsy	Drosophila melanogaster	0.415	122	32.396	37.7	6	6.6	0.5673	no
+9	Yoyo	Ty3/Gypsy	Ceratitis capitata	0.37	65	25.349	40.0	5	10.8	0.4974	no

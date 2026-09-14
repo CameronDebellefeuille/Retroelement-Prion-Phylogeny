@@ -1,14 +1,3 @@
-# Sequence data, generated sequence sets, trees and figures are not committed.
-# See README.md for how to obtain the REXdb and GyDB files.
-data/
-
-# PLAAC is built from source. See plaac/README.md -- that file is committed.
-plaac/*
-!plaac/README.md
-
-# Python
-__pycache__/
-*.py[cod]
-
-# R writes this whenever a plot is drawn without an explicit device.
-Rplots.pdf
+# REXdb's full nucleotide set is 134 MB, over GitHub's 100 MB per-file limit,
+# and the pipeline does not use it. See README.md for how to obtain it.
+data/raw/rexdb/Viridiplantae_v4.0_ALL_DNA.fasta

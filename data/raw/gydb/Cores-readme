@@ -1,0 +1,91 @@
+CORES Database
+
+Comments:
+The Cores database contains 2636 cores of protein element ORFs encoded by the different MGEs analyzed in second GyDB release GyDB 2.0. It also includes a set of core protein domains identified in a variety of integrase-transposase like enzymes (GIN/GINGER TRs and INTs)
+
+The sequences are labeled and in fasta format. Labels are prefixed by the protein abbreviation (below you have the mean of all abbreviations) and suffixed by the element name. Some ORFs correspond to accessory genes of Retroviridae and Caulimoviridae species. Note that many may have the same or a similar name (for instance ORF II, ORFX etc) but this does not necessarily mean a counterpart relationship. 
+
+Citation:
+If you find some interesting using this material and want to cite us in your publication please find our last reference: 
+
+Llorens, C., Futami, R., Covelli, L., Dominguez-Escriba, L., Viu, J.M., Tamarit, D., Aguilar-Rodriguez, J. Vicente-Ripolles, M., Fuster, G., Bernet, G.P., Maumus, F., Munoz-Pomer, A., Sempere, J.M., LaTorre, A., Moya, A. (2011) The Gypsy Database (GyDB) of Mobile Genetic Elements: Release 2.0 Nucleic Acids Research (NARESE) 39 (suppl 1): D70-D74
+
+PROTEIN DOMAIN ABBREVIATIONS :
+
+AP: Aspartic protease
+ATF: Aphid transmission factor
+CGIN: Undescribed conserved module present in CGIN1 integrases
+CHR: Chromodomain
+dUTPase: Deoxyuridine triphosphate nucleotidohydrolase
+ENV: Envelope
+GAG: Gag protein
+GAGCOAT: Caulimoviridae coat protein equivalent to GAG
+INT: Integrase (Note that GIN/GINGER integrases are also included here)
+KRAB-A: Krüppel-associated box domain identified in KRBA2 integrases 
+MOV: Movement protein
+NYN: Ribonuclease NYN domain present in CGIN1 integrases 
+ORF1_Nterdomain: second nonpol protease domain
+PR_OTU: Additional Ovarian tumor cysteine protease domain identifiable in GINGER1 transposons 
+PR_ULP1: Additional ULP1 protease catalytic domain identifiable in GINA, GINNY and GINNO transposons
+RNaseH: Ribonuclease H
+RT: Reverse Transcriptase
+SCAN-A2: SCAN domain ifentified in SCAND3 integrases 
+TAV: Transactivator/viroplasmin protein
+VAP: Virion-associated protein
+
+ACCESSORY PROTEINS 
+
+Retroviridae
+BEL1
+BEL2
+NEF
+ORF1
+ORF2
+ORF3
+ORF4
+ORF5
+ORFA
+ORFB
+ORFC
+ORFQ
+ORFS
+ORFX
+REV
+REX
+ROF
+SAG
+SORF
+SRC
+TAX
+TMX
+TOF
+VIF
+VPR
+VPU
+VPW
+VPX
+VPY
+
+Caulimoviridae:
+ORF1a
+ORF1b
+ORF2
+ORF4
+ORF5
+ORF6
+ORF7
+ORF8
+ORFX
+ORFY
+ORFgp1
+ORFgp3
+ORFgp7
+ORFP12
+ORFP24
+ORFP46
+ORFA
+ORFB
+ORFC
+
+Ty3/Gypsy
+ORF3
