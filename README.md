@@ -1,4 +1,4 @@
-# LTR Retrotransposon Gag PrLD phylogenetics
+# LTR Retrotransposon Gag PrLD Phylogenetics
 
 Data is GyDB. The REXdb analysis is in progress.
 
