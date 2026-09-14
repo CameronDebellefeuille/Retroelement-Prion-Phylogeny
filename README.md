@@ -68,10 +68,9 @@ disorder_all.tsv                                 ──> figures_disorder_classe
 ## Notes & Sources 
 
 **Superfamily is only partly curated.** The sheet covers 234 of the 336
-Gag-bearing elements. The rest are `CopiaSL*` / `GypsySL*` entries typed from
-their own filename by `classify()` in `prep_272.py` — sound, but not curation,
-and those tips carry no host or clade. Of the 272 tips, 231 are curated matches
-and 39 are name-assigned; the 39 are exactly the ones with a blank `host`.
+Gag-bearing elements. The rest are assigned `CopiaSL*` / `GypsySL*` in the GyDB.
+In my data I've labeled them by `classify()` in `prep_272.py`, and those tips carry no information for host or clade.
+Of the 272 tips, 231 are curated matches and 39 are name-assigned; the 39 are the ones with a blank `host`.
 
 Of the 333 elements with both cores, the 61 that don't reach the tree were all
 dropped for one reason: an `X` in the sequence.
