@@ -1,0 +1,273 @@
+tip	element	group	superfamily	host	clade	on_copia_tree	rt_len	short_rt	gag_len	llr	has_prd	prd_start	prd_end	prd_mid_pct	prd_zone	cchc	cchc_n
+17.6	17.6	named	Ty3/Gypsy	Drosophila melanogaster	17.6	0	230	0	439	32.396	1	216	337	63.0	middle	0	0
+1731	1731	named	Ty1/Copia	Drosophila melanogaster	1731	1	253	0	273	-32.022	0				no PrLD	1	1
+297	297	named	Ty3/Gypsy	Drosophila melanogaster	17.6	0	230	0	414	24.203	1	205	320	63.4	middle	0	0
+412	412	named	Ty3/Gypsy	Drosophila melanogaster	412/Mdg1	0	231	0	687	49.195	1	584	687	92.5	C-terminal	0	0
+ASSBSV	ASSBSV	named	Retroviridae	Salmo salar	Undetermined	0	230	0	749	14.059	1	630	749	92.1	C-terminal	1	1
+Amn-ichi	Amn-ichi	named	Ty3/Gypsy	Anolis carolinensis	V-clade	0	232	0	328	-16.329	0				no PrLD	0	0
+Amn-ni	Amn-ni	named	Ty3/Gypsy	Danio rerio	V-clade	0	233	0	330	-17.887	0				no PrLD	1	1
+Amn-san	Amn-san	named	Ty3/Gypsy	Xenopus (Silurana) tropicalis	V-clade	0	233	0	346	-13.745	0				no PrLD	1	1
+Araco	Araco	named	Ty1/Copia	Arabidopsis thaliana	Oryco	1	251	0	320	-2.943	0				no PrLD	1	1
+Athila4-1	Athila4-1	named	Ty3/Gypsy	Arabidopsis thaliana	Athila	0	244	0	615	22.640	1	325	404	59.3	middle	0	0
+B1147A04.5	B1147A04.5	named	Ty3/Gypsy	Oryza sativa	Tat	0	212	0	339	-15.916	0				no PrLD	0	0
+BAEVM	BAEVM	named	Retroviridae	Mandrill sp.	Undetermined	0	237	0	518	-6.583	0				no PrLD	1	1
+BFV	BFV	named	Retroviridae	Bovidae sp.	Undetermined	0	223	0	544	24.777	1	382	544	85.1	C-terminal	0	0
+BIV	BIV	named	Retroviridae	Bovidae sp.	Bovine lentiviruses	0	231	0	449	-12.542	0				no PrLD	1	2
+BLV	BLV	named	Retroviridae	Bovidae sp.	Oncovirinae C-type	0	233	0	392	2.343	0				no PrLD	1	1
+Bagy-1	Bagy-1	named	Ty3/Gypsy	Hordeum vulgare	Del	0	217	0	334	-5.083	0				no PrLD	0	0
+Bagy-2	Bagy-2	named	Ty3/Gypsy	Hordeum vulgare	Athila	0	243	0	386	-20.636	0				no PrLD	0	0
+Batata	Batata	named	Ty1/Copia	Ipomoea batatas	Tork	1	254	0	276	-19.587	0				no PrLD	0	0
+Beetle1	Beetle1	named	Ty3/Gypsy	Beta vulgaris	CRM	0	225	0	359	-22.231	0				no PrLD	1	1
+Bel	Bel	named	Bel/Pao	Drososphila melanogaster	Bel	0	379	0	268	-20.519	0				no PrLD	1	1
+Blastopia	Blastopia	named	Ty3/Gypsy	Drosophila melanogaster	Micropia/Mdg3	0	226	0	318	-31.123	0				no PrLD	1	2
+Boudicca	Boudicca	named	Ty3/Gypsy	Schistosoma mansoni	CsRN1	0	224	0	274	-15.535	0				no PrLD	0	0
+Burdock	Burdock	named	Ty3/Gypsy	Drosophila melanogaster	Gypsy	0	231	0	497	26.076	1	364	430	79.9	C-terminal	0	0
+CAEV	CAEV	named	Retroviridae	Capra pyrenaica	Ovine/Caprine lentiviruses	0	234	0	426	-1.586	0				no PrLD	1	2
+CFG1	CFG1	named	Ty3/Gypsy	Chlamys farresi	A-clade	0	233	0	298	-4.947	0				no PrLD	1	1
+CRM	CRM	named	Ty3/Gypsy	Zea mays	CRM	0	225	0	408	-5.211	0				no PrLD	1	1
+Calypso5-1	Calypso5-1	named	Ty3/Gypsy	Glycine max	Athila	0	241	0	427	18.335	1	236	300	62.8	middle	0	0
+Cer1	Cer1	named	Ty3/Gypsy	Caenorhabditis elegans	Cer1	0	225	0	733	13.261	0				no PrLD	1	1
+Cer10-1	Cer10-1	named	Bel/Pao	Caenorhabditis elegans	Tas	0	376	0	360	-8.202	0				no PrLD	0	0
+Cer2	Cer2	named	Ty3/Gypsy	Caenorhabditis elegans	Cer2-3	0	223	0	613	-5.519	0				no PrLD	1	1
+Cer3	Cer3	named	Ty3/Gypsy	Caenorhabditis elegans	Cer2-3	0	223	0	514	-2.580	0				no PrLD	0	0
+Cer4	Cer4	named	Ty3/Gypsy	Caenorhabditis elegans	B-clade	0	226	0	311	-22.580	0				no PrLD	1	1
+Cer5	Cer5	named	Ty3/Gypsy	Caenorhabditis elegans	B-clade	0	226	0	264	-21.598	0				no PrLD	1	1
+Cer6	Cer6	named	Ty3/Gypsy	Caenorhabditis elegans	B-clade	0	226	0	364	-18.706	0				no PrLD	1	1
+Cer7	Cer7	named	Bel/Pao	Caenorhabditis elegans	Tas	0	373	0	265	-27.462	0				no PrLD	1	3
+Cereba	Cereba	named	Ty3/Gypsy	Hordeum vulgare	CRM	0	224	0	382	-4.946	0				no PrLD	1	1
+Cft-1	Cft-1	named	Ty3/Gypsy	Cladosporium fulvum	Pyret	0	226	0	639	-10.556	0				no PrLD	1	1
+Cgret	Cgret	named	Ty3/Gypsy	Colletotrichum gloeosporioides	Pyret	0	225	0	837	13.718	1	293	358	38.9	middle	1	1
+Cico1	Cico1	named	Ty1/Copia	Ciona intestinalis	GalEA	1	246	0	255	-22.211	0				no PrLD	1	1
+Cigr-1	Cigr-1	named	Ty3/Gypsy	Ciona intestinalis	Cigr-1	0	226	0	300	-10.768	0				no PrLD	1	2
+Circe	Circe	named	Ty3/Gypsy	Drosophila melanogaster	Osvaldo	0	195	0	299	-15.490	0				no PrLD	1	1
+CoDi2.4	CoDi2.4	named	Ty1/Copia	Phaeodactylum tricornutum	CoDi-I	1	253	0	518	-8.923	0				no PrLD	0	0
+CoDi3.1	CoDi3.1	named	Ty1/Copia	Phaeodactylum tricornutum	CoDi-I	1	254	0	624	-6.362	0				no PrLD	0	0
+CoDi4.1	CoDi4.1	named	Ty1/Copia	Phaeodactylum tricornutum	CoDi-I	1	216	0	539	-7.787	0				no PrLD	0	0
+CoDi4.3	CoDi4.3	named	Ty1/Copia	Phaeodactylum tricornutum	CoDi-I	1	256	0	470	-3.928	0				no PrLD	0	0
+CoDi4.4	CoDi4.4	named	Ty1/Copia	Phaeodactylum tricornutum	CoDi-I	1	260	0	461	-10.385	0				no PrLD	0	0
+CoDi4.5	CoDi4.5	named	Ty1/Copia	Thalassiosira pseudonana	CoDi-I	1	255	0	635	-17.422	0				no PrLD	0	0
+CoDi5.1	CoDi5.1	named	Ty1/Copia	Phaeodactylum tricornutum	CoDi-II	1	269	0	352	-4.943	0				no PrLD	0	0
+CoDi5.2	CoDi5.2	named	Ty1/Copia	Phaeodactylum tricornutum	CoDi-II	1	269	0	337	-15.164	0				no PrLD	0	0
+CoDi5.3	CoDi5.3	named	Ty1/Copia	Phaeodactylum tricornutum	CoDi-II	1	269	0	332	-16.888	0				no PrLD	0	0
+CoDi5.4	CoDi5.4	named	Ty1/Copia	Thalassiosira pseudonana	CoDi-II	1	271	0	397	-19.506	0				no PrLD	0	0
+CoDi5.5	CoDi5.5	named	Ty1/Copia	Thalassiosira pseudonana	CoDi-II	1	272	0	391	-15.466	0				no PrLD	0	0
+CoDi5.6	CoDi5.6	named	Ty1/Copia	Thalassiosira pseudonana	CoDi-II	1	273	0	587	17.836	1	364	444	68.8	C-terminal	0	0
+CoDi6.1	CoDi6.1	named	Ty1/Copia	Thalassiosira pseudonana	CoDi-C	1	255	0	482	-7.585	0				no PrLD	0	0
+CoDi6.2	CoDi6.2	named	Ty1/Copia	Thalassiosira pseudonana	CoDi-D	1	249	0	373	-22.754	0				no PrLD	1	2
+CoDi6.3	CoDi6.3	named	Ty1/Copia	Thalassiosira pseudonana	CoDi-D	1	250	0	343	-26.068	0				no PrLD	1	2
+CoDi6.4	CoDi6.4	named	Ty1/Copia	Phaeodactylum tricornutum	CoDi-D	1	274	0	334	-22.355	0				no PrLD	1	2
+CoDi6.5	CoDi6.5	named	Ty1/Copia	Phaeodactylum tricornutum	CoDi-D	1	268	0	392	-18.412	0				no PrLD	1	2
+CoDi6.6	CoDi6.6	named	Ty1/Copia	Phaeodactylum tricornutum	CoDi-C	1	254	0	526	-11.486	0				no PrLD	0	0
+CoDi6.7	CoDi6.7	named	Ty1/Copia	Phaeodactylum tricornutum	CoDi-C	1	254	0	455	-15.264	0				no PrLD	0	0
+CoDi7.1	CoDi7.1	named	Ty1/Copia	Phaeodactylum tricornutum	CoDi-I	1	247	0	484	-11.699	0				no PrLD	0	0
+Copia	Copia	named	Ty1/Copia	Drosophila spp.	Copia	1	250	0	276	-22.698	0				no PrLD	1	1
+CopiaSL_12	CopiaSL_12	superlineage	Ty1/Copia			0	251	0	260	-3.533	0				no PrLD	1	1
+CopiaSL_13	CopiaSL_13	superlineage	Ty1/Copia			0	239	0	296	-4.626	0				no PrLD	1	1
+CopiaSL_22	CopiaSL_22	superlineage	Ty1/Copia			0	244	0	217	-30.264	0				no PrLD	0	0
+CopiaSL_27	CopiaSL_27	superlineage	Ty1/Copia			0	81	1	131	-34.615	0				no PrLD	0	0
+CopiaSL_29	CopiaSL_29	superlineage	Ty1/Copia			0	245	0	122	-24.853	0				no PrLD	0	0
+CopiaSL_30	CopiaSL_30	superlineage	Ty1/Copia			0	246	0	238	-18.867	0				no PrLD	0	0
+CopiaSL_32	CopiaSL_32	superlineage	Ty1/Copia			0	248	0	219	-16.169	0				no PrLD	1	1
+CopiaSL_34	CopiaSL_34	superlineage	Ty1/Copia			0	137	1	202	-19.139	0				no PrLD	0	0
+CopiaSL_38	CopiaSL_38	superlineage	Ty1/Copia			0	205	0	124	-34.148	0				no PrLD	0	0
+CopiaSL_monotypic-Chr01_1s215	CopiaSL_monotypic|Chr01_1s215	monotypic	Ty1/Copia			0	249	0	120	-29.573	0				no PrLD	0	0
+CopiaSL_monotypic-Chr02_1s25	CopiaSL_monotypic|Chr02_1s25	monotypic	Ty1/Copia			0	196	0	116	-12.259	0				no PrLD	0	0
+CopiaSL_monotypic-Chr02_2s24	CopiaSL_monotypic|Chr02_2s24	monotypic	Ty1/Copia			0	54	1	187	-13.571	0				no PrLD	1	1
+CopiaSL_monotypic-Chr03_2s19	CopiaSL_monotypic|Chr03_2s19	monotypic	Ty1/Copia			0	248	0	36	NaN	0				no PrLD	1	1
+CopiaSL_monotypic-Chr03_2s27	CopiaSL_monotypic|Chr03_2s27	monotypic	Ty1/Copia			0	121	1	210	-8.138	0				no PrLD	0	0
+CopiaSL_monotypic-Chr04_2s44	CopiaSL_monotypic|Chr04_2s44	monotypic	Ty1/Copia			0	245	0	197	-20.220	0				no PrLD	0	0
+CopiaSL_monotypic-Chr04_2s50	CopiaSL_monotypic|Chr04_2s50	monotypic	Ty1/Copia			0	69	1	26	NaN	0				no PrLD	0	0
+CopiaSL_monotypic-Chr07_1s01	CopiaSL_monotypic|Chr07_1s01	monotypic	Ty1/Copia			0	174	0	185	-25.452	0				no PrLD	0	0
+CopiaSL_monotypic-Chr08_1s11	CopiaSL_monotypic|Chr08_1s11	monotypic	Ty1/Copia			0	189	0	181	-23.115	0				no PrLD	0	0
+CopiaSL_monotypic-Chr08_2s16	CopiaSL_monotypic|Chr08_2s16	monotypic	Ty1/Copia			0	135	1	25	NaN	0				no PrLD	0	0
+CopiaSL_monotypic-Chr08_2s43	CopiaSL_monotypic|Chr08_2s43	monotypic	Ty1/Copia			0	242	0	194	-24.479	0				no PrLD	0	0
+CopiaSL_monotypic-Chr08_2s69	CopiaSL_monotypic|Chr08_2s69	monotypic	Ty1/Copia			0	242	0	237	-9.571	0				no PrLD	0	0
+CopiaSL_monotypic-Chr11_2s25	CopiaSL_monotypic|Chr11_2s25	monotypic	Ty1/Copia			0	247	0	284	-4.668	0				no PrLD	1	2
+CopiaSL_monotypic-Chr11_2s38	CopiaSL_monotypic|Chr11_2s38	monotypic	Ty1/Copia			0	208	0	83	-18.595	0				no PrLD	0	0
+CopiaSL_monotypic-Chr11_2s39	CopiaSL_monotypic|Chr11_2s39	monotypic	Ty1/Copia			0	141	1	116	-15.418	0				no PrLD	0	0
+CopiaSL_monotypic-Chr12_1s59	CopiaSL_monotypic|Chr12_1s59	monotypic	Ty1/Copia			0	246	0	260	-15.028	0				no PrLD	1	1
+CopiaSL_monotypic-Chr12_2s29	CopiaSL_monotypic|Chr12_2s29	monotypic	Ty1/Copia			0	224	0	61	-25.734	0				no PrLD	0	0
+CsRN1	CsRN1	named	Ty3/Gypsy	Clonorchis sinensis	CsRN1	0	224	0	250	-16.807	0				no PrLD	0	0
+Cubel	Cubel	named	Bel/Pao	Culex quinquefasciatus	Pao	0	383	0	278	-27.229	0				no PrLD	0	0
+Cyclops-2	Cyclops-2	named	Ty3/Gypsy	Pisum sativum	Athila	0	242	0	666	40.190	1	340	410	56.3	middle	0	0
+DRM	DRM	named	Ty3/Gypsy	Danio rerio	A-clade	0	232	0	258	-29.762	0				no PrLD	1	2
+Dane-1	Dane-1	named	Ty3/Gypsy	Aspergillus nidulans	Maggy	0	225	0	263	-8.295	0				no PrLD	1	1
+Del	Del	named	Ty3/Gypsy	Lilium henryi	Del	0	222	0	289	5.692	0				no PrLD	0	0
+Diaspora	Diaspora	named	Ty3/Gypsy	Glycine max	Athila	0	243	0	660	25.270	1	371	448	62.0	middle	1	1
+DrFV-1	DrFV-1	named	Retroviridae	Danio rerio	Undetermined	0	225	0	674	-14.045	0				no PrLD	0	0
+EFV	EFV	named	Retroviridae	Equidae sp.	Undetermined	0	223	0	559	24.567	1	421	559	87.7	C-terminal	0	0
+EIAV	EIAV	named	Retroviridae	Equidae sp.	Equine lentiviruses	0	233	0	427	-13.592	0				no PrLD	1	2
+Endovir1-1	Endovir1-1	named	Ty1/Copia	Arabidopsis thaliana	Sire	1	251	0	603	1.083	0				no PrLD	1	3
+FFV	FFV	named	Retroviridae	Felis catus	Undetermined	0	223	0	514	20.675	1	352	483	81.2	C-terminal	0	0
+FIV	FIV	named	Retroviridae	Felis catus	Feline lentiviruses	0	233	0	422	-13.064	0				no PrLD	1	2
+FeLV	FeLV	named	Retroviridae	Felis catus	Undetermined	0	237	0	493	-12.431	0				no PrLD	1	1
+Fourf	Fourf	named	Ty1/Copia	Zea mays	Tork	1	252	0	258	-13.548	0				no PrLD	1	1
+G-Rhodo	G-Rhodo	named	Ty3/Gypsy	Rhodomonas salina	G-Rhodo	0	225	0	397	-21.186	0				no PrLD	0	0
+GALV	GALV	named	Retroviridae	Hylobates syndactylus	Undetermined	0	237	0	504	-9.182	0				no PrLD	1	1
+Gabel	Gabel	named	Bel/Pao	Gasterosteus aculeatus	Suzu	0	422	0	287	-27.120	0				no PrLD	0	0
+GalEa1	GalEa1	named	Ty1/Copia	Eumunida spp	GalEA	1	244	0	312	-9.294	0				no PrLD	1	1
+Galadriel	Galadriel	named	Ty3/Gypsy	Lycopersicon esculentum	Galadriel	0	225	0	389	-18.443	0				no PrLD	0	0
+Gimli	Gimli	named	Ty3/Gypsy	Arabidopsis thaliana	Reina	0	225	0	371	-9.227	0				no PrLD	0	0
+Gloin	Gloin	named	Ty3/Gypsy	Arabidopsis thaliana	Reina	0	222	0	228	-22.106	0				no PrLD	0	0
+Gmr1	Gmr1	named	Ty3/Gypsy	Gadus morhua	Gmr1	0	224	0	297	-18.192	0				no PrLD	1	1
+Grande1-4	Grande1-4	named	Ty3/Gypsy	Zea diploperennis	Tat	0	227	0	437	-11.740	0				no PrLD	0	0
+Grasshopper	Grasshopper	named	Ty3/Gypsy	Magnaporthe grisea	Pyggy	0	227	0	349	-10.145	0				no PrLD	1	1
+Gulliver	Gulliver	named	Ty3/Gypsy	Schistosoma japonicum	B-clade	0	226	0	231	-19.765	0				no PrLD	0	0
+Gypsy	Gypsy	named	Ty3/Gypsy	Drosophila melanogaster	Gypsy	0	231	0	451	-0.507	0				no PrLD	0	0
+GypsySL_01	GypsySL_01	superlineage	Ty3/Gypsy			0	224	0	106	-29.319	0				no PrLD	0	0
+GypsySL_02	GypsySL_02	superlineage	Ty3/Gypsy			0	220	0	106	-29.319	0				no PrLD	0	0
+GypsySL_03	GypsySL_03	superlineage	Ty3/Gypsy			0	222	0	244	-5.388	0				no PrLD	0	0
+GypsySL_04	GypsySL_04	superlineage	Ty3/Gypsy			0	243	0	298	0.445	0				no PrLD	0	0
+GypsySL_05	GypsySL_05	superlineage	Ty3/Gypsy			0	222	0	121	-38.946	0				no PrLD	0	0
+GypsySL_06	GypsySL_06	superlineage	Ty3/Gypsy			0	225	0	273	8.663	0				no PrLD	0	0
+GypsySL_09	GypsySL_09	superlineage	Ty3/Gypsy			0	223	0	155	-17.239	0				no PrLD	0	0
+GypsySL_12	GypsySL_12	superlineage	Ty3/Gypsy			0	223	0	326	-14.083	0				no PrLD	0	0
+GypsySL_monotypic-Chr02_1s41	GypsySL_monotypic|Chr02_1s41	monotypic	Ty3/Gypsy			0	133	1	283	-18.142	0				no PrLD	0	0
+GypsySL_monotypic-Chr03_1s10	GypsySL_monotypic|Chr03_1s10	monotypic	Ty3/Gypsy			0	212	0	233	-10.723	0				no PrLD	0	0
+GypsySL_monotypic-Chr03_1s33	GypsySL_monotypic|Chr03_1s33	monotypic	Ty3/Gypsy			0	119	1	243	-23.426	0				no PrLD	0	0
+GypsySL_monotypic-Chr04_2s29	GypsySL_monotypic|Chr04_2s29	monotypic	Ty3/Gypsy			0	220	0	226	-9.153	0				no PrLD	0	0
+GypsySL_monotypic-Chr07_1s69	GypsySL_monotypic|Chr07_1s69	monotypic	Ty3/Gypsy			0	123	1	228	-32.206	0				no PrLD	0	0
+Gypsyvir	Gypsyvir	named	Ty3/Gypsy	Drosophila virilis	Gypsy	0	231	0	451	-4.252	0				no PrLD	0	0
+HERV-E	HERV-E	named	Retroviridae	Homo sapiens	Undetermined	0	237	0	493	-15.588	0				no PrLD	0	0
+HERV-K10	HERV-K10	named	Retroviridae	Homo sapiens	Undetermined	0	230	0	645	-11.148	0				no PrLD	1	2
+HFV	HFV	named	Retroviridae	Homo sapiens	Undetermined	0	223	0	528	19.942	0				no PrLD	0	0
+HIV-1	HIV-1	named	Retroviridae	Homo sapiens	Human lentiviruses	0	234	0	436	-3.670	0				no PrLD	1	2
+HIV-2	HIV-2	named	Retroviridae	Homo sapiens	Human lentiviruses	0	234	0	438	-16.899	0				no PrLD	1	2
+HMS-Beagle	HMS-Beagle	named	Ty3/Gypsy	Drosophila melanogaster	Gypsy	0	230	0	467	11.059	1	266	357	66.7	C-terminal	0	0
+HTLV-1	HTLV-1	named	Retroviridae	Homo sapiens	Oncovirinae C-type	0	232	0	406	-6.390	0				no PrLD	1	2
+HTLV-2	HTLV-2	named	Retroviridae	Homo sapiens	Oncovirinae C-type	0	233	0	410	-5.312	0				no PrLD	1	2
+Hopscotch	Hopscotch	named	Ty1/Copia	Oryza sativa	Retrofit	1	255	0	304	3.119	0				no PrLD	1	1
+Humnum	Humnum	named	Ty1/Copia	Heliconius numata	Humnum	1	252	0	253	-8.576	0				no PrLD	1	1
+Hydra1-1	Hydra1-1	named	Ty1/Copia	Hydra Magnipapillata	Hydra	1	250	0	257	-25.049	0				no PrLD	1	2
+Hydra1-2	Hydra1-2	named	Ty1/Copia	Danio rerio	Hydra	1	252	0	288	-20.087	0				no PrLD	1	2
+Hydra2-1	Hydra2-1	named	Ty3/Gypsy	Hydra_magnipapillata	A-clade	0	233	0	274	-18.818	0				no PrLD	1	1
+Hydra3-1	Hydra3-1	named	Bel/Pao	Hydra magnipapillata	Tas	0	438	0	404	-16.214	0				no PrLD	1	1
+Idefix	Idefix	named	Ty3/Gypsy	Drosophila melanogaster	17.6	0	230	0	347	40.890	1	214	311	75.6	C-terminal	0	0
+Ifg7	Ifg7	named	Ty3/Gypsy	Pinus sp.	Reina	0	224	0	167	-15.204	0				no PrLD	0	0
+JSRV	JSRV	named	Retroviridae	Ovis sp.	Undetermined	0	231	0	553	-1.881	0				no PrLD	1	2
+K-HERV	K-HERV	named	Retroviridae	Homo sapiens	Undetermined	0	230	0	695	15.859	1	631	695	95.4	C-terminal	1	1
+Kabuki	Kabuki	named	Ty3/Gypsy	Bombyx mori	CsRN1	0	224	0	257	-6.562	0				no PrLD	0	0
+KoRV	KoRV	named	Retroviridae	Phascolarctos cinereus	Undetermined	0	237	0	510	-11.929	0				no PrLD	1	1
+Koala	Koala	named	Ty1/Copia	Oryza australiensis	Retrofit	1	249	0	303	-1.198	0				no PrLD	1	1
+Kobel	Kobel	named	Bel/Pao	Saccoglossus spp	Sinbad	0	383	0	280	-16.816	0				no PrLD	1	1
+Koco	Koco	named	Ty1/Copia	Drosophila spp.	Copia	1	250	0	304	-11.576	0				no PrLD	1	1
+LPDV	LPDV	named	Retroviridae	Meleagris gallopavo	Undetermined	0	230	0	667	-7.062	0				no PrLD	1	2
+Legolas	Legolas	named	Ty3/Gypsy	Arabidopsis thaliana	Del	0	225	0	509	-10.827	0				no PrLD	1	2
+MGLR3	MGLR3	named	Ty3/Gypsy	Magnaporthe grisea	MGLR3	0	225	0	459	-19.669	0				no PrLD	1	1
+MMTV	MMTV	named	Retroviridae	Mus sp.	Undetermined	0	230	0	569	-15.454	0				no PrLD	1	2
+MPMV	MPMV	named	Retroviridae	Macaca mulatta	Undetermined	0	230	0	594	-9.134	0				no PrLD	1	2
+Mabel	Mabel	named	Bel/Pao	Brugia malayi	Tas	0	367	0	287	-22.498	0				no PrLD	1	1
+Mag	Mag	named	Ty3/Gypsy	Bombyx mori	A-clade	0	225	0	314	-18.936	0				no PrLD	1	2
+Maggy	Maggy	named	Ty3/Gypsy	Magnaporthe grisea	Maggy	0	225	0	457	-5.858	0				no PrLD	1	1
+Max	Max	named	Bel/Pao	Drososphila melanogaster	Bel	0	372	0	270	-24.352	0				no PrLD	1	2
+MdEV	MdEV	named	Retroviridae	Mus sp.	Undetermined	0	237	0	505	-6.691	0				no PrLD	1	1
+Mdg1	Mdg1	named	Ty3/Gypsy	Drosophila melanogaster	412/Mdg1	0	231	0	451	34.126	1	352	426	86.3	C-terminal	0	0
+Mdg3	Mdg3	named	Ty3/Gypsy	Drosophila melanogaster	Micropia/Mdg3	0	226	0	392	-5.435	0				no PrLD	1	2
+Melmoth	Melmoth	named	Ty1/Copia	Arabidopsis thaliana	Retrofit	1	255	0	405	-6.011	0				no PrLD	0	0
+Micropia	Micropia	named	Ty3/Gypsy	Drosophila melanogaster	Micropia/Mdg3	0	214	0	276	-17.894	0				no PrLD	1	1
+Monkey	Monkey	named	Ty3/Gypsy	Musa sp	Galadriel	0	225	0	162	-23.108	0				no PrLD	0	0
+Moose	Moose	named	Bel/Pao	Anopheles gambiae	Bel	0	364	0	271	-30.521	0				no PrLD	1	2
+Mtanga	Mtanga	named	Ty1/Copia	Anopheles gambiae	Mtanga	1	251	0	267	-21.987	0				no PrLD	1	1
+MuERV-L	MuERV-L	named	Retroviridae	Mus musculus	ERV-L	0	230	0	414	-22.832	0				no PrLD	0	0
+MuLV	MuLV	named	Retroviridae	Mus sp.	Undetermined	0	237	0	518	-8.360	0				no PrLD	1	1
+Nabel	Nabel	named	Bel/Pao	Nasonia vitripennis	Bel	0	406	0	353	-14.610	0				no PrLD	1	1
+Ninja	Ninja	named	Bel/Pao	Drosophila spp.	Pao	0	379	0	273	-18.273	0				no PrLD	1	1
+Nomad	Nomad	named	Ty3/Gypsy	Drosophila melanogaster	Gypsy	0	230	0	417	10.412	1	245	321	67.9	C-terminal	0	0
+Olco1	Olco1	named	Ty1/Copia	Oryzias latipes	GalEA	1	244	0	267	-16.848	0				no PrLD	1	1
+Opie-2	Opie-2	named	Ty1/Copia	Oryza sativa	Sire	1	251	0	535	-21.500	0				no PrLD	0	0
+Oryco1-1	Oryco1-1	named	Ty1/Copia	Oryza sativa	Oryco	1	262	0	299	-20.192	0				no PrLD	1	2
+Oryco1-2	Oryco1-2	named	Ty1/Copia	Oryza sativa	Oryco	1	240	0	399	-7.926	0				no PrLD	1	1
+Osser	Osser	named	Ty1/Copia	Volvox carteri	Osser	1	251	0	334	-1.417	0				no PrLD	1	1
+Osvaldo	Osvaldo	named	Ty3/Gypsy	Drosophila sp.	Osvaldo	0	227	0	413	-14.025	0				no PrLD	1	1
+PERV-MSL	PERV-MSL	named	Retroviridae	Sus scrofa	Undetermined	0	237	0	508	-13.301	0				no PrLD	1	1
+Pao	Pao	named	Bel/Pao	Bombyx mori	Pao	0	361	0	276	-16.491	0				no PrLD	1	1
+Peabody	Peabody	named	Ty3/Gypsy	Pisum sativum	Del	0	225	0	354	-10.578	0				no PrLD	1	2
+Poco	Poco	named	Ty1/Copia	Populus trichocarpa	Oryco	1	250	0	309	-17.646	0				no PrLD	1	1
+Purbel	Purbel	named	Bel/Pao	Strongylocentrotus purpuratus	Suzu	0	433	0	465	-14.893	0				no PrLD	1	1
+PyERV	PyERV	named	Retroviridae	Phyton molurus	Undetermined	0	231	0	561	-5.419	0				no PrLD	1	2
+PyRE1G1	PyRE1G1	named	Ty1/Copia	Porphyra yezoensis	PyRE1G1	1	249	0	308	-20.647	0				no PrLD	1	1
+Pyggy	Pyggy	named	Ty3/Gypsy	Pyrenophora graminea	Pyggy	0	227	0	402	-3.171	0				no PrLD	1	1
+Pyret	Pyret	named	Ty3/Gypsy	Magnaporthe grisea	Pyret	0	222	0	638	4.503	0				no PrLD	0	0
+RCHO-K1	RCHO-K1	named	Retroviridae	Cricetulus griseus	Undetermined	0	237	0	496	-5.940	0				no PrLD	1	1
+REM1	REM1	named	Ty3/Gypsy	Chlamydomonas reinhardtii	REM	0	226	0	556	-3.972	0				no PrLD	0	0
+REV	REV	named	Retroviridae	Gallus sp.	Undetermined	0	237	0	484	-8.536	0				no PrLD	1	1
+RIRE2	RIRE2	named	Ty3/Gypsy	Oryza sativa	Tat	0	226	0	740	-10.551	0				no PrLD	0	0
+RSV	RSV	named	Retroviridae	Gallus sp.	Undetermined	0	229	0	541	-10.772	0				no PrLD	1	2
+RTVL-Ia	RTVL-Ia	named	Retroviridae	Homo sapiens	Undetermined	0	239	0	232	-6.559	0				no PrLD	0	0
+RTvr2	RTvr2	named	Ty1/Copia	Vigna radiata	Tork	1	253	0	290	-17.405	0				no PrLD	0	0
+Real	Real	named	Ty3/Gypsy	Alternaria alternata	Pyggy	0	227	0	406	-9.728	0				no PrLD	1	1
+Reina	Reina	named	Ty3/Gypsy	Zea mays	Reina	0	225	0	428	-2.801	0				no PrLD	0	0
+RetroSor1	RetroSor1	named	Ty3/Gypsy	Sorghum bicolor	Tat	0	226	0	617	1.211	0				no PrLD	0	0
+Retrofit	Retrofit	named	Ty1/Copia	Oryza longistaminata	Retrofit	1	251	0	310	12.729	0				no PrLD	1	1
+Retrosat-2	Retrosat-2	named	Ty3/Gypsy	Oryza sativa	Del	0	225	0	416	15.490	1	289	357	77.6	C-terminal	1	1
+Roo	Roo	named	Bel/Pao	Drososphila melanogaster	Bel	0	360	0	266	-19.324	0				no PrLD	1	1
+SA-OMVV	SA-OMVV	named	Retroviridae	Ovis sp.	Ovine lentiviruses	0	234	0	431	-2.948	0				no PrLD	1	2
+SERV	SERV	named	Retroviridae	Mandrill sp.	Undetermined	0	230	0	595	-8.299	0				no PrLD	1	2
+SFV-1	SFV-1	named	Retroviridae	Primates sp.	Undetermined	0	223	0	533	19.549	0				no PrLD	0	0
+SIRE1-4	SIRE1-4	named	Ty1/Copia	Glycine max	Sire	1	251	0	538	-12.806	0				no PrLD	1	2
+SIVAGM	SIVAGM	named	Retroviridae	Cercopithecus tantalus	Primate lentiviruses	0	234	0	449	-6.643	0				no PrLD	1	2
+SIVMAC	SIVMAC	named	Retroviridae	Macaca mulatta	Primate lentiviruses	0	234	0	440	-9.004	0				no PrLD	1	2
+SIVMND	SIVMND	named	Retroviridae	Mandrillus sphinx	Primate lentiviruses	0	235	0	435	-8.159	0				no PrLD	1	1
+SMRV-H	SMRV-H	named	Retroviridae	Homo sapiens	Undetermined	0	230	0	663	-5.188	0				no PrLD	1	1
+SPM	SPM	named	Ty3/Gypsy	Strongylocentrotus purpuratus	A-clade	0	233	0	283	-7.937	0				no PrLD	1	1
+SRV-1	SRV-1	named	Retroviridae	Macaca mulatta	Undetermined	0	230	0	595	-9.134	0				no PrLD	1	2
+STcLV2PP1664	STcLV2PP1664	named	Retroviridae	Pan paniscus	Oncovirinae C-type	0	233	0	410	-6.182	0				no PrLD	1	2
+SURL	SURL	named	Ty3/Gypsy	Tripneustes gratilla	C-clade	0	225	0	274	-16.827	0				no PrLD	1	1
+Saci-6	Saci-6	named	Bel/Pao	Schistosoma mansoni	Sinbad	0	255	0	288	-19.753	0				no PrLD	1	1
+Sinbad	Sinbad	named	Bel/Pao	Schistosoma mansoni	Sinbad	0	376	0	285	-18.160	0				no PrLD	1	1
+Skipper	Skipper	named	Ty3/Gypsy	Dictyostelium discoideum	Skipper	0	223	0	382	-16.704	0				no PrLD	1	1
+Skippy	Skippy	named	Ty3/Gypsy	Fusarium sp	Pyret	0	226	0	853	0.133	0				no PrLD	1	1
+SnRV	SnRV	named	Retroviridae	Ophicephalus striatus	SnRV	0	232	0	618	-15.467	0				no PrLD	1	1
+Spirobel	Spirobel	named	Bel/Pao	Trichinella spiralis	Tas	0	417	0	434	-21.348	0				no PrLD	1	1
+Springer	Springer	named	Ty3/Gypsy	Drosophila melanogaster	Gypsy	0	231	0	454	-5.590	0				no PrLD	0	0
+Sto-4	Sto-4	named	Ty1/Copia	Zea mays	Tork	1	253	0	287	-2.194	0				no PrLD	1	1
+Sushi-ichi	Sushi-ichi	named	Ty3/Gypsy	Takifugu rubripes	V-clade	0	225	0	371	-8.619	0				no PrLD	1	1
+Suzu	Suzu	named	Bel/Pao	Takifugu rubripes (Fugu rubripes)	Suzu	0	423	0	286	-38.362	0				no PrLD	0	0
+TF1	TF1	named	Ty3/Gypsy	Schizosaccharomyces pombe	TF1-2	0	225	0	266	-27.553	0				no PrLD	0	0
+TF2	TF2	named	Ty3/Gypsy	Schizosaccharomyces pombe	TF1-2	0	225	0	269	-13.992	0				no PrLD	0	0
+TSI-9	TSI-9	named	Ty1/Copia	Setaria italica	Sire	1	251	0	811	-7.262	0				no PrLD	1	2
+Tamy	Tamy	named	Bel/Pao	Antheraea mylitta	Pao	0	376	0	269	-25.540	0				no PrLD	1	1
+Tas	Tas	named	Bel/Pao	Ascaris lumbricoides	Tas	0	364	0	271	-13.199	0				no PrLD	1	2
+Tat4-1	Tat4-1	named	Ty3/Gypsy	Arabidopsis thaliana	Tat	0	226	0	545	-7.517	0				no PrLD	0	0
+Tdh2	Tdh2	named	Ty1/Copia	Debaryomyces Hanserii	Ty (Pseudovirus)	1	244	0	335	-6.222	0				no PrLD	0	0
+Ted	Ted	named	Ty3/Gypsy	Trichoplusia ni	17.6	0	230	0	410	11.769	0				no PrLD	0	0
+Tft2	Tft2	named	Ty3/Gypsy	Arabidopsis thaliana	Tat	0	226	0	393	-15.684	0				no PrLD	0	0
+Tkm1	Tkm1	named	Ty1/Copia	kluyveromyces marxianus	Ty (Pseudovirus)	1	247	0	421	12.961	1	98	174	32.3	N-terminal	0	0
+Tma	Tma	named	Ty3/Gypsy	Arabidopsis thaliana	Del	0	224	0	297	-12.273	0				no PrLD	1	1
+Tnt-1	Tnt-1	named	Ty1/Copia	Nicotiana tabacum	Tork	1	254	0	261	-4.453	0				no PrLD	1	1
+Tntom1	Tntom1	named	Ty3/Gypsy	Nicotiana tomentosiformis	Galadriel	0	225	0	149	-33.072	0				no PrLD	0	0
+ToRTL1	ToRTL1	named	Ty1/Copia	Lycopersicon esculentum	Sire	1	248	0	660	-18.018	0				no PrLD	1	2
+Tom	Tom	named	Ty3/Gypsy	Drosophila ananassae	17.6	0	230	0	398	23.017	1	211	316	66.2	middle	0	0
+Tor1	Tor1	named	Ty3/Gypsy	Oikopleura dioica	Tor1	0	227	0	553	-14.789	0				no PrLD	1	1
+Tor2	Tor2	named	Ty3/Gypsy	Oikopleura dioica	Tor2	0	240	0	376	-21.864	0				no PrLD	0	0
+Tor4a	Tor4a	named	Ty3/Gypsy	Oikopleura dioica	Tor4	0	229	0	385	6.129	0				no PrLD	1	2
+Tork4	Tork4	named	Ty1/Copia	Solanum lycopersicum	Tork	1	255	0	265	-22.786	0				no PrLD	1	1
+Tribel	Tribel	named	Bel/Pao	Tribolium castaneum	Bel	0	434	0	494	-4.230	0				no PrLD	1	1
+Tricopia	Tricopia	named	Ty1/Copia	Tribolium castaneum	Tricopia	1	250	0	269	-23.571	0				no PrLD	1	1
+Tse1	Tse1	named	Ty1/Copia	Kazachstania exigua (Saccharomyces exiguus)	Ty (Pseudovirus)	1	247	0	383	5.162	0				no PrLD	0	0
+Tse3	Tse3	named	Ty3/Gypsy	Saccharomyces exiguus	Tse3	0	226	0	255	-18.263	0				no PrLD	1	1
+Tto1	Tto1	named	Ty1/Copia	Nicotiana tabacum	Tork	1	254	0	276	-10.684	0				no PrLD	1	1
+Tv1	Tv1	named	Ty3/Gypsy	Drosophila virilis	17.6	0	228	0	261	22.006	0				no PrLD	0	0
+Ty1B	Ty1B	named	Ty1/Copia	Saccharomyces cerevisiae	Ty (Pseudovirus)	1	241	0	431	16.883	1	49	167	25.1	N-terminal	0	0
+Ty2	Ty2	named	Ty1/Copia	Saccharomyces cerevisiae	Ty (Pseudovirus)	1	242	0	424	12.991	0				no PrLD	0	0
+Ty3-1	Ty3-1	named	Ty3/Gypsy	Saccharomyces cerevisiae	Ty3	0	223	0	307	-11.578	0				no PrLD	1	1
+Ty4	Ty4	named	Ty1/Copia	Saccharomyces cerevisiae	Ty (Pseudovirus)	1	249	0	410	-18.341	0				no PrLD	1	1
+Ulysses	Ulysses	named	Ty3/Gypsy	Drosophila virilis	Osvaldo	0	225	0	482	-14.107	0				no PrLD	0	0
+V12	V12	named	Ty1/Copia	Vitis vinifera	Tork	1	254	0	272	-24.278	0				no PrLD	1	1
+VMV	VMV	named	Retroviridae	Ovis sp.	Ovine/Caprine lentiviruses	0	235	0	435	-2.811	0				no PrLD	1	2
+WdSV	WdSV	named	Retroviridae	Stizostedion vitreum	Undetermined	0	230	0	487	3.524	0				no PrLD	1	1
+Woot	Woot	named	Ty3/Gypsy	Tribolium castaneum	Osvaldo	0	225	0	425	21.822	1	366	425	93.1	C-terminal	0	0
+XEN1	XEN1	named	Retroviridae	Xenopus laevis	Undetermined	0	235	0	385	-2.309	0				no PrLD	1	2
+Xanthias	Xanthias	named	Ty1/Copia	Drosophila melanogaster	1731	1	253	0	260	-28.369	0				no PrLD	1	1
+Yokozuna	Yokozuna	named	Ty1/Copia	Bombyx mori	Copia	1	232	0	292	7.265	0				no PrLD	1	1
+Yoyo	Yoyo	named	Ty3/Gypsy	Ceratitis capitata	Gypsy	0	230	0	470	25.349	1	301	365	70.9	C-terminal	0	0
+ZFERV-2	ZFERV-2	named	Retroviridae	Danio rerio	Undetermined	0	228	0	588	-9.928	0				no PrLD	1	1
+Zam	Zam	named	Ty3/Gypsy	Drosophila melanogaster	17.6	0	230	0	343	19.406	0				no PrLD	0	0
+Zebel	Zebel	named	Bel/Pao	Danio rerio	Pao	0	378	0	310	-4.189	0				no PrLD	1	1
+Zeco1	Zeco1	named	Ty1/Copia	Danio rerio	GalEA	1	244	0	264	-12.609	0				no PrLD	0	0
+Zeco2	Zeco2	named	Ty1/Copia	Danio rerio	GalEA	1	250	0	237	-12.259	0				no PrLD	0	0
+marY1	marY1	named	Ty3/Gypsy	Tricholoma spp.	MarY1	0	226	0	372	-4.631	0				no PrLD	1	1
+pCal	pCal	named	Ty1/Copia	Candida albicans	Ty (Pseudovirus)	1	245	0	324	-20.543	0				no PrLD	0	0
+pCretro3	pCretro3	named	Ty1/Copia	Phanerochaete chrysosporium	pCretro	1	248	0	259	-22.366	0				no PrLD	1	1
+pCretro6	pCretro6	named	Ty1/Copia	Phanerochaete chrysosporium	pCretro	1	251	0	287	-22.382	0				no PrLD	1	1
+rGmr1	rGmr1	named	Ty3/Gypsy	Danio rerio	Gmr1	0	224	0	252	-21.148	0				no PrLD	0	0

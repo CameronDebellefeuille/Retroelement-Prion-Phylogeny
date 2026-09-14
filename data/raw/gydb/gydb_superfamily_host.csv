@@ -1,0 +1,438 @@
+Element Name,Superfamily/Family,Host Species,Clade,Cluster/Genus,Branch/Class,Notes
+17.6,Ty3/Gypsy,Drosophila melanogaster,17.6,Errantiviridae,Branch 2,
+297,Ty3/Gypsy,Drosophila melanogaster,17.6,Errantiviridae,Branch 2,
+412,Ty3/Gypsy,Drosophila melanogaster,412/Mdg1,Undetermined,Branch 2,
+Amn-ichi,Ty3/Gypsy,Anolis carolinensis,V-clade,Fungi and vertebrates,Chromoviruses,
+Amn-ni,Ty3/Gypsy,Danio rerio,V-clade,Fungi and vertebrates,Chromoviruses,
+Amn-san,Ty3/Gypsy,Xenopus (Silurana) tropicalis,V-clade,Fungi and vertebrates,Chromoviruses,
+Athila4-1,Ty3/Gypsy,Arabidopsis thaliana,Athila,Athila/Tat,Branch 2,
+B1147A04.5,Ty3/Gypsy,Oryza sativa,Tat,Athila/Tat,Branch 2,
+Bagy-1,Ty3/Gypsy,Hordeum vulgare,Del,Plants,Chromoviruses,
+Bagy-2,Ty3/Gypsy,Hordeum vulgare,Athila,Athila/Tat,Branch 2,
+Beetle1,Ty3/Gypsy,Beta vulgaris,CRM,Plants,Chromoviruses,
+Blastopia,Ty3/Gypsy,Drosophila melanogaster,Micropia/Mdg3,Undetermined,Branch 2,
+Boudicca,Ty3/Gypsy,Schistosoma mansoni,CsRN1,Undetermined,Branch 2,
+Burdock,Ty3/Gypsy,Drosophila melanogaster,Gypsy,Errantiviridae,Branch 2,
+Calypso,Ty3/Gypsy,Glycine max,Athila,Athila/Tat,Branch 2,
+Cer1,Ty3/Gypsy,Caenorhabditis elegans,Cer1,Undetermined,Branch 2,
+Cer2,Ty3/Gypsy,Caenorhabditis elegans,Cer2-3,Undetermined,Branch 2,
+Cer3,Ty3/Gypsy,Caenorhabditis elegans,Cer2-3,Undetermined,Branch 2,
+Cer4,Ty3/Gypsy,Caenorhabditis elegans,B-clade,Mag,Branch 2,
+Cer5,Ty3/Gypsy,Caenorhabditis elegans,B-clade,Mag,Branch 2,
+Cer6,Ty3/Gypsy,Caenorhabditis elegans,B-clade,Mag,Branch 2,
+Cereba,Ty3/Gypsy,Hordeum vulgare,CRM,Plants,Chromoviruses,
+CFG1,Ty3/Gypsy,Chlamys farresi,A-clade,Mag,Branch 2,
+Cft-1,Ty3/Gypsy,Cladosporium fulvum,Pyret,Fungi and vertebrates,Chromoviruses,
+Cgret,Ty3/Gypsy,Colletotrichum gloeosporioides,Pyret,Fungi and vertebrates,Chromoviruses,
+Cigr-1,Ty3/Gypsy,Ciona intestinalis,Cigr-1,Undetermined,Branch 2,
+Cinful-1,Ty3/Gypsy,Zea mays,Tat,Athila/Tat,Branch 2,
+Circe,Ty3/Gypsy,Drosophila melanogaster,Osvaldo,Undetermined,Branch 2,
+CRM,Ty3/Gypsy,Zea mays,CRM,Plants,Chromoviruses,
+CsRN1,Ty3/Gypsy,Clonorchis sinensis,CsRN1,Undetermined,Branch 2,
+Cyclops-2,Ty3/Gypsy,Pisum sativum,Athila,Athila/Tat,Branch 2,
+Dane-1,Ty3/Gypsy,Aspergillus nidulans,Maggy,Fungi and vertebrates,Chromoviruses,
+Del,Ty3/Gypsy,Lilium henryi,Del,Plants,Chromoviruses,
+Diaspora,Ty3/Gypsy,Glycine max,Athila,Athila/Tat,Branch 2,
+DRM,Ty3/Gypsy,Danio rerio,A-clade,Mag,Branch 2,
+G-Rhodo,Ty3/Gypsy,Rhodomonas salina,G-Rhodo,Plants,Chromoviruses,
+Galadriel,Ty3/Gypsy,Lycopersicon esculentum,Galadriel,Plants,Chromoviruses,
+Gimli,Ty3/Gypsy,Arabidopsis thaliana,Reina,Plants,Chromoviruses,
+Gloin,Ty3/Gypsy,Arabidopsis thaliana,Reina,Plants,Chromoviruses,
+Gmr1,Ty3/Gypsy,Gadus morhua,Gmr1,Undetermined,Branch 2,
+Grande1-4,Ty3/Gypsy,Zea diploperennis,Tat,Athila/Tat,Branch 2,
+Grasshopper,Ty3/Gypsy,Magnaporthe grisea,Pyggy,Fungi and vertebrates,Chromoviruses,
+Gulliver,Ty3/Gypsy,Schistosoma japonicum,B-clade,Mag,Branch 2,
+Gypsy,Ty3/Gypsy,Drosophila melanogaster,Gypsy,Errantiviridae,Branch 2,
+Gypsyvir,Ty3/Gypsy,Drosophila virilis,Gypsy,Errantiviridae,Branch 2,
+HMS-Beagle,Ty3/Gypsy,Drosophila melanogaster,Gypsy,Errantiviridae,Branch 2,
+Hydra2-1,Ty3/Gypsy,Hydra_magnipapillata,A-clade,Mag,Branch 2,
+Idefix,Ty3/Gypsy,Drosophila melanogaster,17.6,Errantiviridae,Branch 2,
+Ifg7,Ty3/Gypsy,Pinus sp.,Reina,Plants,Chromoviruses,
+Kabuki,Ty3/Gypsy,Bombyx mori,CsRN1,Undetermined,Branch 2,
+Legolas,Ty3/Gypsy,Arabidopsis thaliana,Del,Plants,Chromoviruses,
+Mag,Ty3/Gypsy,Bombyx mori,A-clade,Mag,Branch 2,
+Maggy,Ty3/Gypsy,Magnaporthe grisea,Maggy,Fungi and vertebrates,Chromoviruses,
+marY1,Ty3/Gypsy,Tricholoma spp.,MarY1,Fungi and vertebrates,Chromoviruses,
+Mdg1,Ty3/Gypsy,Drosophila melanogaster,412/Mdg1,Undetermined,Branch 2,
+Mdg3,Ty3/Gypsy,Drosophila melanogaster,Micropia/Mdg3,Undetermined,Branch 2,
+MGLR3,Ty3/Gypsy,Magnaporthe grisea,MGLR3,Fungi and vertebrates,Chromoviruses,
+Micropia,Ty3/Gypsy,Drosophila melanogaster,Micropia/Mdg3,Undetermined,Branch 2,
+Monkey,Ty3/Gypsy,Musa sp,Galadriel,Plants,Chromoviruses,
+Nomad,Ty3/Gypsy,Drosophila melanogaster,Gypsy,Errantiviridae,Branch 2,
+Ogre,Ty3/Gypsy,Pisum sativum,Tat,Athila/Tat,Branch 2,
+Osvaldo,Ty3/Gypsy,Drosophila sp.,Osvaldo,Undetermined,Branch 2,
+Peabody,Ty3/Gypsy,Pisum sativum,Del,Plants,Chromoviruses,
+Pyggy,Ty3/Gypsy,Pyrenophora graminea,Pyggy,Fungi and vertebrates,Chromoviruses,
+Pyret,Ty3/Gypsy,Magnaporthe grisea,Pyret,Fungi and vertebrates,Chromoviruses,
+Real,Ty3/Gypsy,Alternaria alternata,Pyggy,Fungi and vertebrates,Chromoviruses,
+Reina,Ty3/Gypsy,Zea mays,Reina,Plants,Chromoviruses,
+REM1,Ty3/Gypsy,Chlamydomonas reinhardtii,REM,Plants,Chromoviruses,
+Retrosat-2,Ty3/Gypsy,Oryza sativa,Del,Plants,Chromoviruses,
+RetroSor1,Ty3/Gypsy,Sorghum bicolor,Tat,Athila/Tat,Branch 2,
+rGmr1,Ty3/Gypsy,Danio rerio,Gmr1,Undetermined,Branch 2,
+RIRE2,Ty3/Gypsy,Oryza sativa,Tat,Athila/Tat,Branch 2,
+Skipper,Ty3/Gypsy,Dictyostelium discoideum,Skipper,Undetermined,Chromoviruses,
+Skippy,Ty3/Gypsy,Fusarium sp,Pyret,Fungi and vertebrates,Chromoviruses,
+SPM,Ty3/Gypsy,Strongylocentrotus purpuratus,A-clade,Mag,Branch 2,
+Springer,Ty3/Gypsy,Drosophila melanogaster,Gypsy,Errantiviridae,Branch 2,
+SURL,Ty3/Gypsy,Tripneustes gratilla,C-clade,Mag,Branch 2,
+Sushi-ichi,Ty3/Gypsy,Takifugu rubripes,V-clade,Fungi and vertebrates,Chromoviruses,
+Tat4-1,Ty3/Gypsy,Arabidopsis thaliana,Tat,Athila/Tat,Branch 2,
+Ted,Ty3/Gypsy,Trichoplusia ni,17.6,Errantiviridae,Branch 2,
+TF1,Ty3/Gypsy,Schizosaccharomyces pombe,TF1-2,Fungi and vertebrates,Chromoviruses,
+TF2,Ty3/Gypsy,Schizosaccharomyces pombe,TF1-2,Fungi and vertebrates,Chromoviruses,
+Tft2,Ty3/Gypsy,Arabidopsis thaliana,Tat,Athila/Tat,Branch 2,
+Tma,Ty3/Gypsy,Arabidopsis thaliana,Del,Chromoviridae,&#160;,
+Tntom1,Ty3/Gypsy,Nicotiana tomentosiformis,Galadriel,Plants,Chromoviruses,
+Tom,Ty3/Gypsy,Drosophila ananassae,17.6,Errantiviridae,Branch 2,
+Tor1,Ty3/Gypsy,Oikopleura dioica,Tor1,Undetermined,Branch 2,
+Tor2,Ty3/Gypsy,Oikopleura dioica,Tor2,Undetermined,Branch 2,
+Tor4a,Ty3/Gypsy,Oikopleura dioica,Tor4,Undetermined,Branch 2,
+Tse3,Ty3/Gypsy,Saccharomyces exiguus,Tse3,Undetermined,Chromoviruses,
+Tv1,Ty3/Gypsy,Drosophila virilis,17.6,Errantiviridae,Branch 2,
+Ty3-1,Ty3/Gypsy,Saccharomyces cerevisiae,Ty3,Undetermined,Chromoviruses,
+Ulysses,Ty3/Gypsy,Drosophila virilis,Osvaldo,Undetermined,Branch 2,
+Woot,Ty3/Gypsy,Tribolium castaneum,Osvaldo,Undetermined,Branch 2,
+Yoyo,Ty3/Gypsy,Ceratitis capitata,Gypsy,Errantiviridae,Branch 2,
+Zam,Ty3/Gypsy,Drosophila melanogaster,17.6,Errantiviridae,Branch 2,
+1731,Ty1/Copia,Drosophila melanogaster,1731,Undetermined,Branch 2,
+Araco,Ty1/Copia,Arabidopsis thaliana,Oryco,Undetermined,Branch 2,
+Batata,Ty1/Copia,Ipomoea batatas,Tork,Undetermined,Branch 2,
+Cico1,Ty1/Copia,Ciona intestinalis,GalEA,Undetermined,Branch 1,
+CoDi2.4,Ty1/Copia,Phaeodactylum tricornutum,CoDi-I,Undetermined,Branch 1,
+CoDi3.1,Ty1/Copia,Phaeodactylum tricornutum,CoDi-I,Undetermined,Branch 1,
+CoDi4.1,Ty1/Copia,Phaeodactylum tricornutum,CoDi-I,Undetermined,Branch 1,
+CoDi4.3,Ty1/Copia,Phaeodactylum tricornutum,CoDi-I,Undetermined,Branch 1,
+CoDi4.4,Ty1/Copia,Phaeodactylum tricornutum,CoDi-I,Undetermined,Branch 1,
+CoDi4.5,Ty1/Copia,Thalassiosira pseudonana,CoDi-I,Undetermined,Branch 1,
+CoDi5.1,Ty1/Copia,Phaeodactylum tricornutum,CoDi-II,Undetermined,Branch 1,
+CoDi5.2,Ty1/Copia,Phaeodactylum tricornutum,CoDi-II,Undetermined,Branch 1,
+CoDi5.3,Ty1/Copia,Phaeodactylum tricornutum,CoDi-II,Undetermined,Branch 1,
+CoDi5.4,Ty1/Copia,Thalassiosira pseudonana,CoDi-II,Undetermined,Branch 1,
+CoDi5.5,Ty1/Copia,Thalassiosira pseudonana,CoDi-II,Undetermined,Branch 1,
+CoDi5.6,Ty1/Copia,Thalassiosira pseudonana,CoDi-II,Undetermined,Branch 1,
+CoDi6.1,Ty1/Copia,Thalassiosira pseudonana,CoDi-C,Undetermined,Branch 1,
+CoDi6.2,Ty1/Copia,Thalassiosira pseudonana,CoDi-D,Undetermined,Branch 1,
+CoDi6.3,Ty1/Copia,Thalassiosira pseudonana,CoDi-D,Undetermined,Branch 1,
+CoDi6.4,Ty1/Copia,Phaeodactylum tricornutum,CoDi-D,Undetermined,Branch 1,
+CoDi6.5,Ty1/Copia,Phaeodactylum tricornutum,CoDi-D,Undetermined,Branch 1,
+CoDi6.6,Ty1/Copia,Phaeodactylum tricornutum,CoDi-C,Undetermined,Branch 1,
+CoDi6.7,Ty1/Copia,Phaeodactylum tricornutum,CoDi-C,Undetermined,Branch 1,
+CoDi7.1,Ty1/Copia,Phaeodactylum tricornutum,CoDi-I,Undetermined,Branch 1,
+Copia,Ty1/Copia,Drosophila spp.,Copia,Hemivirus,Branch 2,
+Endovir1-1,Ty1/Copia,Arabidopsis thaliana,Sire,Sirevirus,Branch 2,
+Fourf,Ty1/Copia,Zea mays,Tork,Undetermined,Branch 2,
+GalEa1,Ty1/Copia,Eumunida spp,GalEA,Undetermined,Branch 1,
+Hopscotch,Ty1/Copia,Oryza sativa,Retrofit,Undetermined,Branch 2,
+Humnum,Ty1/Copia,Heliconius numata,Humnum,Undetermined,Branch 2,
+Hydra1-1,Ty1/Copia,Hydra Magnipapillata,Hydra,Undetermined,Branch 2,
+Hydra1-2,Ty1/Copia,Danio rerio,Hydra,Undetermined,Branch 2,
+Koala,Ty1/Copia,Oryza australiensis,Retrofit,Undetermined,Branch 2,
+Koco,Ty1/Copia,Drosophila spp.,Copia,Hemivirus,Branch 2,
+Melmoth,Ty1/Copia,Arabidopsis thaliana,Retrofit,Undetermined,Branch 2,
+Mtanga,Ty1/Copia,Anopheles gambiae,Mtanga,Undetermined,Branch 2,
+Olco1,Ty1/Copia,Oryzias latipes,GalEA,Undetermined,Branch 1,
+Opie-2,Ty1/Copia,Oryza sativa,Sire,Sirevirus,Branch 2,
+Oryco1-1,Ty1/Copia,Oryza sativa,Oryco,Undetermined,Branch 2,
+Oryco1-2,Ty1/Copia,Oryza sativa,Oryco,Undetermined,Branch 2,
+Osser,Ty1/Copia,Volvox carteri,Osser,Undetermined,Branch 2,
+pCal,Ty1/Copia,Candida albicans,Ty (Pseudovirus),Pseudovirus,Branch 1,
+pCretro3,Ty1/Copia,Phanerochaete chrysosporium,pCretro,Undetermined,Branch 2,
+pCretro6,Ty1/Copia,Phanerochaete chrysosporium,pCretro,Undetermined,Branch 2,
+Poco,Ty1/Copia,Populus trichocarpa,Oryco,Undetermined,Branch 2,
+PyRE1G1,Ty1/Copia,Porphyra yezoensis,PyRE1G1,Undetermined,Branch 2,
+Retrofit,Ty1/Copia,Oryza longistaminata,Retrofit,Undetermined,Branch 2,
+RTvr2,Ty1/Copia,Vigna radiata,Tork,Undetermined,Branch 2,
+SIRE1-4,Ty1/Copia,Glycine max,Sire,Sirevirus,Branch 2,
+Sto-4,Ty1/Copia,Zea mays,Tork,Undetermined,Branch 2,
+Tdh2,Ty1/Copia,Debaryomyces Hanserii,Ty (Pseudovirus),Pseudovirus,Branch 1,
+Tkm1,Ty1/Copia,kluyveromyces marxianus,Ty (Pseudovirus),Pseudovirus,Branch 1,
+Tnt-1,Ty1/Copia,Nicotiana tabacum,Tork,Undetermined,Branch 2,
+Tork4,Ty1/Copia,Solanum lycopersicum,Tork,Undetermined,Branch 2,
+ToRTL1,Ty1/Copia,Lycopersicon esculentum,Sire,Sirevirus,Branch 2,
+Tricopia,Ty1/Copia,Tribolium castaneum,Tricopia,Undetermined,Branch 2,
+Tse1,Ty1/Copia,Kazachstania exigua (Saccharomyces exiguus),Ty (Pseudovirus),Pseudovirus,Branch 1,
+TSI-9,Ty1/Copia,Setaria italica,Sire,Sirevirus,Branch 2,
+Tto1,Ty1/Copia,Nicotiana tabacum,Tork,Undetermined,Branch 2,
+Ty1B,Ty1/Copia,Saccharomyces cerevisiae,Ty (Pseudovirus),Pseudovirus,Branch 1,
+Ty2,Ty1/Copia,Saccharomyces cerevisiae,Ty (Pseudovirus),Pseudovirus,Branch 1,
+Ty4,Ty1/Copia,Saccharomyces cerevisiae,Ty (Pseudovirus),Pseudovirus,Branch 1,
+V12,Ty1/Copia,Vitis vinifera,Tork,Undetermined,Branch 2,
+Vitico1-1,Ty1/Copia,Vitis vinifera,Oryco,Undetermined,Branch 2,
+Vitico1-2,Ty1/Copia,Vitis vinifera,Retrofit,Undetermined,Branch 2,
+Xanthias,Ty1/Copia,Drosophila melanogaster,1731,Undetermined,Branch 2,
+Yokozuna,Ty1/Copia,Bombyx mori,Copia,Hemivirus,Branch 2,
+Zeco1,Ty1/Copia,Danio rerio,GalEA,Undetermined,Branch 1,
+Zeco2,Ty1/Copia,Danio rerio,GalEA,Undetermined,Branch 1,
+Bel,Bel/Pao,Drososphila melanogaster,Bel,Undetermined,Branch 1,
+Cer10-1,Bel/Pao,Caenorhabditis elegans,Tas,Undetermined,Branch 1,
+Cer7,Bel/Pao,Caenorhabditis elegans,Tas,Undetermined,Branch 1,
+Cubel,Bel/Pao,Culex quinquefasciatus,Pao,Undetermined,Branch 2,
+Gabel,Bel/Pao,Gasterosteus aculeatus,Suzu,Undetermined,Branch 3,
+Hydra3-1,Bel/Pao,Hydra magnipapillata,Tas,Undetermined,Branch 1,
+Kobel,Bel/Pao,Saccoglossus spp,Sinbad,Undetermined,Branch 2,
+Mabel,Bel/Pao,Brugia malayi,Tas,Undetermined,Branch 1,
+Max,Bel/Pao,Drososphila melanogaster,Bel,Undetermined,Branch 1,
+Moose,Bel/Pao,Anopheles gambiae,Bel,Undetermined,Branch 1,
+Nabel,Bel/Pao,Nasonia vitripennis,Bel,Undetermined,Branch 1,
+Ninja,Bel/Pao,Drosophila spp.,Pao,Undetermined,Branch 2,
+Pao,Bel/Pao,Bombyx mori,Pao,Undetermined,Branch 2,
+Purbel,Bel/Pao,Strongylocentrotus purpuratus,Suzu,Undetermined,Branch 3,
+Roo,Bel/Pao,Drososphila melanogaster,Bel,Undetermined,Branch 1,
+Saci-6,Bel/Pao,Schistosoma mansoni,Sinbad,Undetermined,Branch 2,
+Sinbad,Bel/Pao,Schistosoma mansoni,Sinbad,Undetermined,Branch 2,
+Spirobel,Bel/Pao,Trichinella spiralis,Tas,Undetermined,Branch 1,
+Suzu,Bel/Pao,Takifugu rubripes (Fugu rubripes),Suzu,Undetermined,Branch 3,
+Tamy,Bel/Pao,Antheraea mylitta,Pao,Undetermined,Branch 2,
+Tas,Bel/Pao,Ascaris lumbricoides,Tas,Undetermined,Branch 1,
+Tribel,Bel/Pao,Tribolium castaneum,Bel,Undetermined,Branch 1,
+Zebel,Bel/Pao,Danio rerio,Pao,Undetermined,Branch 2,
+BRRV,Caulimoviridae,Vaccinium spp.,,Soymovirus,Class 1,
+BsCVBV,Caulimoviridae,Bougainvillea spectabilis,,Badnavirus,Class 2,
+BSGFV,Caulimoviridae,Musa sp,,Badnavirus,Class 2,
+BSMyV,Caulimoviridae,Musa sp,,Badnavirus,Class 2,
+BSOLV,Caulimoviridae,Musa sp,,Badnavirus,Class 2,
+BSVAV,Caulimoviridae,Musa sp,,Badnavirus,Class 2,
+CaMV,Caulimoviridae,Brassica oleracea,,Caulimovirus,Class 1,
+CERV,Caulimoviridae,Dianthus caryophyllus,,Caulimovirus,Class 1,
+CLNV,Caulimoviridae,Cycadaceae,,Badnavirus,Class 2,
+CmYLCV,Caulimoviridae,Cestrum parqui,,Soymovirus,Class 1,
+ComYMV,Caulimoviridae,Commelina diffusa,,Badnavirus,Class 2,
+CSSV,Caulimoviridae,Theobroma cacao,,Badnavirus,Class 2,
+CSVMV,Caulimoviridae,Manihot esculenta,,Cavemovirus,Class 3,
+CYMV,Caulimoviridae,Rangpur lime,,Badnavirus,Class 2,
+DBV,Caulimoviridae,Dioscorea sansibarensis,,Badnavirus,Class 2,
+DrMV,Caulimoviridae,Dracaena sanderiana,,Badnavirus,Class 2,
+EVCV,Caulimoviridae,Eupatorium spp.,,Caulimovirus,Class 1,
+FMV,Caulimoviridae,Scrophularia californica,,Caulimovirus,Class 1,
+KTSV,Caulimoviridae,Kalanchoe blossfeldiana,,Badnavirus,Class 2,
+LLDAV,Caulimoviridae,Lamium maculatum,,Caulimovirus,Class 1,
+MiMV,Caulimoviridae,Mirabilis spp.,,Caulimovirus,Class 1,
+PCSV,Caulimoviridae,Arachis hypogaea,,Soymovirus,Class 1,
+PVCV,Caulimoviridae,Petunia spp,,Petuvirus,Class 4,
+RTBV,Caulimoviridae,Oryza spp.,,Tungrovirus,Class 2,
+RuFDV,Caulimoviridae,Rudbeckia hirta,,Caulimovirus,Class 1,
+SbCMV,Caulimoviridae,Glycine max,,Soymovirus,Class 1,
+ScBIMV,Caulimoviridae,Saccharum L.,,Badnavirus,Class 2,
+SVBV,Caulimoviridae,Fragaria spp,,Caulimovirus,Class 1,
+TaBV,Caulimoviridae,Colocasia esculenta,,Badnavirus,Class 2,
+TVCV,Caulimoviridae,Nicotiana spp,,Cavemovirus,Class 3,
+ASSBSV,Retroviridae,Salmo salar,Undetermined,Epsilonretrovirus,Class 1,
+BAEVM,Retroviridae,Mandrill sp.,Undetermined,Gammaretrovirus,Class 1,
+BFV,Retroviridae,Bovidae sp.,Undetermined,Spumaretrovirus,Class 3,
+BIV,Retroviridae,Bovidae sp.,Bovine lentiviruses,Lentivirus,Class 2,
+BLV,Retroviridae,Bovidae sp.,Oncovirinae C-type,Deltaretrovirus,Class 2,
+CAEV,Retroviridae,Capra pyrenaica,Ovine/Caprine lentiviruses,Lentivirus,Class 2,
+DrFV-1,Retroviridae,Danio rerio,Undetermined,Spumaretrovirus,Class 3,
+EFV,Retroviridae,Equidae sp.,Undetermined,Spumaretrovirus,Class 3,
+EIAV,Retroviridae,Equidae sp.,Equine lentiviruses,Lentivirus,Class 2,
+FeLV,Retroviridae,Felis catus,Undetermined,Gammaretrovirus,Class 1,
+FIV,Retroviridae,Felis catus,Feline lentiviruses,Lentivirus,Class 2,
+GaLV,Retroviridae,Hylobates syndactylus,Undetermined,Gammaretrovirus,Class 1,
+HERV-E,Retroviridae,Homo sapiens,Undetermined,Gammaretrovirus,Class 1,
+HERV-K10,Retroviridae,Homo sapiens,Undetermined,Betaretrovirus,Class 2,
+HFV,Retroviridae,Homo sapiens,Undetermined,Spumaretrovirus,Class 3,
+HIV-1,Retroviridae,Homo sapiens,Human lentiviruses,Lentivirus,Class 2,
+HIV-2,Retroviridae,Homo sapiens,Human lentiviruses,Lentivirus,Class 2,
+HTLV-1,Retroviridae,Homo sapiens,Oncovirinae C-type,Deltaretrovirus,Class 2,
+HTLV-2,Retroviridae,Homo sapiens,Oncovirinae C-type,Deltaretrovirus,Class 2,
+JSRV,Retroviridae,Ovis sp.,Undetermined,Betaretrovirus,Class 2,
+K-HERV,Retroviridae,Homo sapiens,Undetermined,Betaretrovirus,Class 2,
+KoRV,Retroviridae,Phascolarctos cinereus,Undetermined,Gammaretrovirus,Class 1,
+LPDV,Retroviridae,Meleagris gallopavo,Undetermined,Alpharetrovirus,Class 2,
+MdEV,Retroviridae,Mus sp.,Undetermined,Gammaretrovirus,Class 1,
+MMTV,Retroviridae,Mus sp.,Undetermined,Betaretrovirus,Class 2,
+MPMV,Retroviridae,Macaca mulatta,Undetermined,Betaretrovirus,Class 2,
+MuERV-L,Retroviridae,Mus musculus,ERV-L,Undetermined,Class 3,
+MuLV,Retroviridae,Mus sp.,Undetermined,Gammaretrovirus,Class 1,
+PERV-MSL,Retroviridae,Sus scrofa,Undetermined,Gammaretrovirus,Class 1,
+PyERV,Retroviridae,Phyton molurus,Undetermined,Betaretrovirus,Class 2,
+RCHO-K1,Retroviridae,Cricetulus griseus,Undetermined,Gammaretrovirus,Class 1,
+REV,Retroviridae,Gallus sp.,Undetermined,Gammaretrovirus,Class 1,
+RSV,Retroviridae,Gallus sp.,Undetermined,Alpharetrovirus,Class 2,
+RTVL-Ia,Retroviridae,Homo sapiens,Undetermined,Gammaretrovirus,Class 1,
+SA-OMVV,Retroviridae,Ovis sp.,Ovine lentiviruses,Lentivirus,Class 2,
+SERV,Retroviridae,Mandrill sp.,Undetermined,Betaretrovirus,Class 2,
+SFV-1,Retroviridae,Primates sp.,Undetermined,Spumaretrovirus,Class 3,
+SIVAGM,Retroviridae,Cercopithecus tantalus,Primate lentiviruses,Lentivirus,Class 2,
+SIVMAC,Retroviridae,Macaca mulatta,Primate lentiviruses,Lentivirus,Class 2,
+SIVMND,Retroviridae,Mandrillus sphinx,Primate lentiviruses,Lentivirus,Class 2,
+SMRV-H,Retroviridae,Homo sapiens,Undetermined,Betaretrovirus,Class 2,
+SnRV,Retroviridae,Ophicephalus striatus,SnRV,Undetermined,Class 1,
+SRV-1,Retroviridae,Macaca mulatta,Undetermined,Betaretrovirus,Class 2,
+STcLV2PP1664,Retroviridae,Pan paniscus,Oncovirinae C-type,Deltaretrovirus,Class 2,
+VMV,Retroviridae,Ovis sp.,Ovine/Caprine lentiviruses,Lentivirus,Class 2,
+WdSV,Retroviridae,Stizostedion vitreum,Undetermined,Epsilonretrovirus,Class 1,
+XEN1,Retroviridae,Xenopus laevis,Undetermined,Epsilonretrovirus,Class 1,
+ZFERV,Retroviridae,Danio rerio,Undetermined,Epsilonretrovirus,Class 1,
+ZFERV-2,Retroviridae,Danio rerio,Undetermined,Epsilonretrovirus,Class 1,
+FFV,Retrovirus,Felis catus,Undetermined,Spumaretrovirus,Class 3,
+AcGIN1 genomic with introns,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+AcGIN2 EST,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+AcGINGER1-1 Repbaseaccession Ginger1-1 AC with 138ntTIRs,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+AgFOB1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApBIN1a,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApBIN1b,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApBIN1c,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApBIN1d,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApBIN1e,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApBIN1f,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApBIN1g,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApBIN1h,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApBIN1j,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApBIN1k,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApBIN1l,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApBIN1m,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApBIN1n,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApBIN1o,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApBIN1p,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApCIN1a,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApCIN1b,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApCIN1c,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApCIN1d,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApCIN1e,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApCIN1f,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApCIN1j,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApCIN1n,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApCIN1q,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN3a,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN3b,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN3c,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN4a,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN4b,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN4c,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN4d,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN4e,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN4f,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN5a,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN5b,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN5c,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN5e,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN5f,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN6a,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN6b,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN6c,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN7a,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN7b,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN7c,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGIN7d,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGINGER1a,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGINGER1b,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGINGER1c,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGINGER1d,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGINGER1e,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGINGER1f,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGINGER2a,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGINGER2b,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ApGINGER2f,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+BfGINGER1-1 with79ntTIRs,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+BfGINGER2-1 Repbaseaccession Ginger2-1 BF,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+BmGINGER2a with 37nt TIRs,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+BmGINGER2b,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+BtCGIN1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+BtGIN1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+BtKRBA2,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+BtSCAND3,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+CbCIN1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+CcCIN1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+CfCGIN1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+CfGIN1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+CfKRBA2,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+CfSCAND3,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+CgFOB1 partial mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ChKRBA2,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ChSCAND3,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+CiCIN1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+CiGIN2 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+CsGIN2 genomic with introns,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+DnKRBA2,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+DnSCAND3,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+DpCIN1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+DrCIN1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+DrGIN2-1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+DrGIN2-2 EST,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+EcCGIN1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+EcGIN1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+EcKRBA2,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+EcSCAND3,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+FcKRBA2,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+FcSCAND3,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+FrGIN2 genomic with introns,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+GaGIN2 genomic with introns,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+GfCIN1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+GgGIN1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+GgGIN2 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+GiCIN1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+HmCIN1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+HmGINA1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+HmGINA2,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+HmGINA3,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+HmGINA4,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+HmGINA5,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+HmGINGER1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+HmGINGER1-3 with136ntTIRs,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+HmGINGER2-1 Repbaseaccession Ginger2-1 HM,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+HmGINNY1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+HmGINNY2,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+HmGINO1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+HmGINO2 with 45ntTIRs,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+HmGINO3,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+HsCGIN1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+HsGIN1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+HsKRBA2,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+HsSCAND3,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ISAf,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ISEc,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ISLa,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ISSc,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ISTv1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ISTv2 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ISTv3 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+LaKRBA2,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+LaSCAND3,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+LaSCAND3-2,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+LaSCAND3-3,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+LsGINGER2-1 Repbaseaccession Ginger2-1 LS,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+LtFOB1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+MbCIN1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+MdGIN1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+MeGIN2 genomic with introns,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+MeSCAND3,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+MfGIN1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+MgGINGER2 ORF with no TIRs,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+MmCGIN1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+MmGIN1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+NvCIN1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+NveCIN1-1 Repbaseaccession Polinton-N1 NV,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+NveCIN1-2,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+NvGINGER2-1 Repbaseaccession Ginger2-1 NV,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+NvGINGER2-2 Repbaseaccession Ginger2-2 NV,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+OaGIN1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+OcKRBA2,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+OcSCAND3,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+OgGIN1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+OnGIN2 EST,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+PaGIN1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+PvKRBA2,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+PvSCAND3,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+RcGIN2 EST,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+RnGIN1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+RpGINGER2a,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+RpGINGER2b,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ScFOB1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+SmCIN1 Repbaseaccession Polinton-1 SM with intron,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+SpCIN1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+SsGIN1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+SsSCAND3,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+TcCIN1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+TcGINGER2,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+TgGIN1 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+TgGIN2 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+TsGINGER2,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+TtKRBA2,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+TtSCAND3,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+XlGIN2 mRNA,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+XmCIN1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+XtCIN1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+XtGIN2,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
+ZrFOB1,,,,&#160;,&#160;,No family data on GyDB page (stub entry)
