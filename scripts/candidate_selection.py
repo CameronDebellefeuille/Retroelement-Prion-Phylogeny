@@ -1,7 +1,18 @@
 """Pull the shortlisted Gag candidates out of GyDB and write them up for synthesis.
 
-Nine elements, all PrLD-bearing: six Ty3/Gypsy from insects and three
-Retroviridae foamy viruses. Edit CANDIDATES to change the list.
+Fourteen elements in three groups. Eleven are PrLD-bearing: six Ty3/Gypsy from
+insects, three Retroviridae foamy viruses, and two Ty1/Copia yeast elements.
+The last three are high-disorder controls with no PrLD at all. Edit CANDIDATES
+to change the list -- which group an element lands in is read from has_prd in
+traits_272.tsv, not hardcoded here, so the two cannot drift apart.
+
+The no-PrLD three are the disorder control: they answer whether the PrLD is
+doing something an ordinary IDR of the same Gag does not. They are the three
+highest mean_disorder elements with has_prd == 0 and a Gag of at least 60 aa.
+The 60 aa floor is PLAAC's core window -- below it PLAAC cannot call a domain
+at all, so "no PrLD" would be absence of evidence rather than evidence of
+absence. Two CopiaSL_monotypic fragments of 26 and 25 aa score higher on raw
+disorder and are excluded for exactly that reason.
 
 THESE ARE PROTEIN SEQUENCES. GyDB's cores-database is amino acid, and the only
 nucleotide data in this repo is the REXdb plant release, which does not contain
@@ -38,8 +49,14 @@ DISORDER = os.path.join(REPO, "data", "processed", "gydb", "disorder_272.tsv")
 OUT = os.path.join(REPO, "candidates")
 LLPS = os.path.join(OUT, "scores.csv")
 
+# GyDB has no element called "Ty1". The S. cerevisiae Ty1 element is
+# catalogued as Ty1B, which is what goes in the list and what comes back out in
+# the element column -- renaming it here would break the join to traits_272.tsv
+# and to GAG_Ty1B in the cores database.
 CANDIDATES = ["Tom", "297", "17.6", "Yoyo", "HMS-Beagle", "Nomad",
-              "EFV", "BFV", "FFV"]
+              "EFV", "BFV", "FFV",
+              "Ty1B", "Tkm1",
+              "CopiaSL_29", "RIRE2", "RetroSor1"]
 
 # A zinc knuckle is a hit to any of these four signatures for IPR001878 /
 # IPR036875 -- Pfam, SMART, PROSITE and SUPERFAMILY. Same definition the knuckle
@@ -168,9 +185,17 @@ def main():
     for name in CANDIDATES:
         t = traits[name]
         gag = seqs["GAG_" + name]
-        # PLAAC coordinates are 1-based and inclusive.
-        start, end = int(t["prd_start"]), int(t["prd_end"])
-        prld = gag[start - 1:end]
+        # The no-PrLD controls have empty prd_start/prd_end, so there is no
+        # domain to slice and every prld_* column stays blank. Blank, not zero:
+        # a zero would read as a measured composition of 0%, which is a
+        # different claim from "there is no domain to measure".
+        has_prld = t["has_prd"] == "1"
+        if has_prld:
+            # PLAAC coordinates are 1-based and inclusive.
+            start, end = int(t["prd_start"]), int(t["prd_end"])
+            prld = gag[start - 1:end]
+        else:
+            start, end, prld = "", "", ""
         hit = knuckles.get(name, [])
         if name not in scanned:
             knuckle = "not scanned"
@@ -184,21 +209,22 @@ def main():
             "superfamily": t["superfamily"],
             "host": t["host"],
             "gag_len": len(gag),
+            "has_prld": int(has_prld),
             "prld_start": start,
             "prld_end": end,
-            "prld_len": len(prld),
+            "prld_len": len(prld) if has_prld else "",
             "plaac_llr": t["llr"],
             "zinc_knuckle": knuckle,
             "knuckle_n": len(hit),
-            "prld_pct_Q": pc["pct_Q"],
-            "prld_pct_N": pc["pct_N"],
-            "prld_pct_QN": pc["pct_QN"],
-            "prld_pct_G": pc["pct_G"],
-            "prld_pct_S": pc["pct_S"],
-            "prld_pct_Y": pc["pct_Y"],
-            "prld_pct_P": pc["pct_P"],
-            "prld_net_charge": pc["net_charge"],
-            "prld_pct_charged": pc["pct_charged"],
+            "prld_pct_Q": pc.get("pct_Q", ""),
+            "prld_pct_N": pc.get("pct_N", ""),
+            "prld_pct_QN": pc.get("pct_QN", ""),
+            "prld_pct_G": pc.get("pct_G", ""),
+            "prld_pct_S": pc.get("pct_S", ""),
+            "prld_pct_Y": pc.get("pct_Y", ""),
+            "prld_pct_P": pc.get("pct_P", ""),
+            "prld_net_charge": pc.get("net_charge", ""),
+            "prld_pct_charged": pc.get("pct_charged", ""),
             "gag_pct_QN": gc["pct_QN"],
             "gag_mean_disorder": d.get("mean_disorder", ""),
             "llps_score": llps.get(name, ""),
@@ -207,22 +233,35 @@ def main():
 
     os.makedirs(OUT, exist_ok=True)
 
-    def fasta(path, key, label):
+    def fasta(path, key, label, records):
         with open(path, "w", encoding="utf-8", newline="\n") as fh:
             fh.write("; %s -- PROTEIN (amino acid), not DNA. See "
                      "scripts/candidate_selection.py\n" % label)
-            for r in rows:
-                fh.write(">%s | %s | %s | Gag %d aa | PrLD %d-%d | LLR %s | "
-                         "zinc knuckle: %s | Q+N %.1f%% | net charge %+d\n%s\n"
-                         % (r["element"], r["superfamily"], r["host"] or "host unrecorded",
-                            r["gag_len"], r["prld_start"], r["prld_end"],
-                            r["plaac_llr"], r["zinc_knuckle"], r["prld_pct_QN"],
-                            r["prld_net_charge"], wrap(r[key])))
+            for r in records:
+                if r["has_prld"]:
+                    domain = ("PrLD %s-%s | LLR %s | zinc knuckle: %s | "
+                              "Q+N %.1f%% | net charge %+d"
+                              % (r["prld_start"], r["prld_end"], r["plaac_llr"],
+                                 r["zinc_knuckle"], r["prld_pct_QN"],
+                                 r["prld_net_charge"]))
+                else:
+                    domain = ("no PrLD (disorder control) | LLR %s | "
+                              "zinc knuckle: %s | mean disorder %s"
+                              % (r["plaac_llr"], r["zinc_knuckle"],
+                                 r["gag_mean_disorder"] or "-"))
+                fh.write(">%s | %s | %s | Gag %d aa | %s\n%s\n"
+                         % (r["element"], r["superfamily"],
+                            r["host"] or "host unrecorded", r["gag_len"],
+                            domain, wrap(r[key])))
 
-    fasta(os.path.join(OUT, "candidate_gag.faa"), "gag_aa", "full Gag cores")
-    fasta(os.path.join(OUT, "candidate_prld.faa"), "prld_aa", "PLAAC-called domains only")
+    # Every candidate has a Gag; only the eleven PrLD-bearing ones have a domain
+    # to write, so candidate_prld.faa is the shorter file by design.
+    fasta(os.path.join(OUT, "candidate_gag.faa"), "gag_aa", "full Gag cores", rows)
+    fasta(os.path.join(OUT, "candidate_prld.faa"), "prld_aa",
+          "PLAAC-called domains only", [r for r in rows if r["has_prld"]])
 
-    cols = ["element", "superfamily", "host", "gag_len", "prld_start", "prld_end",
+    cols = ["element", "superfamily", "host", "gag_len", "has_prld",
+            "prld_start", "prld_end",
             "prld_len", "plaac_llr", "zinc_knuckle", "knuckle_n",
             "prld_pct_Q", "prld_pct_N", "prld_pct_QN", "prld_pct_G", "prld_pct_S",
             "prld_pct_Y", "prld_pct_P", "prld_net_charge", "prld_pct_charged",
@@ -235,7 +274,12 @@ def main():
         w.writerows(rows)
 
     if llps:
-        ranked = sorted(rows, key=lambda r: -float(r["llps_score"]))
+        # Rank only the rows that have a score. The no-PrLD controls were never
+        # sent to catGRANULE -- it was run on candidate_prld.faa, and they have
+        # no domain in that file -- so they are absent here rather than ranked
+        # last, which would read as a measured propensity of zero.
+        scored = [r for r in rows if r["llps_score"]]
+        ranked = sorted(scored, key=lambda r: -float(r["llps_score"]))
         lcols = ["rank", "element", "superfamily", "host", "llps_score",
                  "prld_len", "plaac_llr", "prld_pct_QN", "prld_net_charge",
                  "prld_pct_Y", "gag_mean_disorder", "zinc_knuckle"]
@@ -246,20 +290,25 @@ def main():
             w.writeheader()
             for i, r in enumerate(ranked, 1):
                 w.writerow({**{k: r[k] for k in lcols if k in r}, "rank": i})
-        missing = [r["element"] for r in rows if not r["llps_score"]]
+        missing = [r["element"] for r in rows
+                   if r["has_prld"] and not r["llps_score"]]
         if missing:
             print("no LLPS score for: %s" % ", ".join(missing))
-
     print("%d candidates -> %s" % (len(rows), OUT))
     print("%-12s %-13s %5s %10s %7s %8s %6s %6s %6s %9s" %
           ("element", "superfamily", "Gag", "PrLD", "LLR", "knuckle",
            "Q+N%", "charge", "Y%", "disorder"))
     for r in rows:
-        print("%-12s %-13s %5d %4d-%-5d %7.1f %8s %5.1f%% %+6d %5.1f%% %9s"
-              % (r["element"], r["superfamily"], r["gag_len"],
-                 r["prld_start"], r["prld_end"], float(r["plaac_llr"]),
-                 r["zinc_knuckle"], r["prld_pct_QN"], r["prld_net_charge"],
-                 r["prld_pct_Y"], r["gag_mean_disorder"] or "-"))
+        if r["has_prld"]:
+            dom = "%4d-%-5d" % (r["prld_start"], r["prld_end"])
+            comp = ("%5.1f%% %+6d %5.1f%%"
+                    % (r["prld_pct_QN"], r["prld_net_charge"], r["prld_pct_Y"]))
+        else:
+            dom, comp = "%10s" % "no PrLD", "%6s %6s %6s" % ("-", "-", "-")
+        print("%-12s %-13s %5d %s %7.1f %8s %s %9s"
+              % (r["element"], r["superfamily"], r["gag_len"], dom,
+                 float(r["plaac_llr"]), r["zinc_knuckle"], comp,
+                 r["gag_mean_disorder"] or "-"))
 
     called = sum(1 for r in rows if r["zinc_knuckle"] == "yes")
     unscanned = sum(1 for r in rows if r["zinc_knuckle"] == "not scanned")
