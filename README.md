@@ -10,7 +10,12 @@ conda activate copia-prld
 pip install --no-deps metapredict==2.65.1
 ```
 
-PLAAC is a Java jar built from source: see `plaac/README.md`.
+PLAAC is vendored unmodified from <https://github.com/whitehead/plaac> at tag
+`v1.1.0b7`; `plaac/README.md` is upstream's own. Rebuild with
+`cd plaac && PLAAC_VERSION=v1.1.0b7 ./build_plaac.sh`, then move
+`target/plaac.jar` to `plaac/plaac.jar`, where the scripts look for it.
+Three example proteomes (27 MB) are not kept; `plaac/CITATION.cff` is from
+upstream master, as it postdates the tag.
 
 ## Pipeline
 
