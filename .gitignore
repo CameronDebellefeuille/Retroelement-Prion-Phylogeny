@@ -1,3 +1,6 @@
 # REXdb's full nucleotide set is 134 MB, over GitHub's 100 MB per-file limit,
 # and the pipeline does not use it. See README.md for how to obtain it.
 data/raw/rexdb/Viridiplantae_v4.0_ALL_DNA.fasta
+.Rproj.user
+.Rhistory
+.RData
